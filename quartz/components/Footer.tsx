@@ -14,12 +14,13 @@ export default ((opts?: Options) => {
       <footer>
         <hr />
         <p>
-          Created with <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a>, © {year}
+          Sourced from my <a href="https://obsidian.md/">Obsidian</a> notes.
         </p>
+        <br/>
         <ul>
           {Object.entries(links).map(([text, link]) => (
             <li>
-              <a href={link}>{text}</a>
+              <a style="opacity: 0.8" href={link}>{text}</a>
             </li>
           ))}
         </ul>

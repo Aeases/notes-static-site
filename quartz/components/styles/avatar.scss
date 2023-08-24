@@ -1,0 +1,30 @@
+@use "../../styles/variables.scss" as *;
+
+.avatar-div {
+  /* Rounded border */
+  border-radius: 50%;
+
+    /* Center the content */
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  vertical-align: middle;
+  width: max(3rem);
+  height: max(3rem);
+  border-radius: 50%;
+  border: 1.5px dashed var(--darkgray);
+  margin: 10px;
+  float: right;
+  position: relative;
+  margin-bottom: 0;
+  margin-top: auto;
+  overflow: hidden
+}
+
+.avatar-image {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform: scale(1.2) translate(-10px -5px);
+  pointer-events: none;
+}

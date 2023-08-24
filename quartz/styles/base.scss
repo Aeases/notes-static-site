@@ -15,11 +15,16 @@ body,
 section {
   margin: 0;
   max-width: 100%;
+  font-size: 18px;
+  line-height: 1.6;
+  font-weight: 400;
   box-sizing: border-box;
   background-color: var(--light);
   font-family: var(--bodyFont);
   color: var(--darkgray);
 }
+
+
 
 .text-highlight {
   background-color: #fff23688;
@@ -91,7 +96,7 @@ a {
 
   & article {
     & > h1 {
-      font-size: 2rem;
+      font-size: 1.5em;
     }
 
     & li:has(> input[type="checkbox"]) {
@@ -106,8 +111,8 @@ a {
     }
 
     & li > * {
-      margin-top: 0;
-      margin-bottom: 0;
+      margin-top: 0.45rem;
+      margin-bottom: 0.45rem;
     }
 
     p > strong {
@@ -233,10 +238,10 @@ h4,
 h5,
 h6,
 thead {
-  font-family: var(--headerFont);
+  font-family: 30px var(--headerFont);
   color: var(--dark);
-  font-weight: revert;
-  margin-bottom: 0;
+  font-weight: 30px;
+  margin-bottom: 0.5rem;
 
   article > & > a {
     color: var(--dark);
@@ -270,26 +275,42 @@ h6 {
 // typography improvements
 h1 {
   font-size: 1.75rem;
+  font-weight: 700;
   margin-top: 2.25rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.425em;
+  font-weight: 675;
   margin-top: 1.9rem;
   margin-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.12rem;
+  font-size: 1.35em;
+  font-weight: 650;
   margin-top: 1.62rem;
   margin-bottom: 1rem;
 }
 
-h4,
-h5,
+h4 {
+  font-size: 1.275em;
+  font-weight: 625;
+  margin-top: 1.62rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 1.62rem;
+  margin-bottom: 1rem;
+}
+
 h6 {
-  font-size: 1rem;
+  font-size: 1.125rem;
+  font-weight: 575;
   margin-top: 1.5rem;
   margin-bottom: 1rem;
 }
@@ -381,7 +402,7 @@ code {
 tbody,
 li,
 p {
-  line-height: 1.6rem;
+  line-height: 1.8rem;
 }
 
 table {

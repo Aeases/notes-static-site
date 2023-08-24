@@ -7,14 +7,14 @@ export const sharedPageComponents: SharedLayout = {
   header: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/",
+      GitHub: "https://github.com/aeases",
     },
   }),
 }
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
-  beforeBody: [Component.ArticleTitle(), Component.ContentMeta(), Component.TagList()],
+  beforeBody: [Component.Avatar(), Component.ArticleTitle(), Component.ContentMeta(), Component.TagList(), ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
@@ -22,7 +22,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Darkmode(),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
-  right: [Component.Graph(), Component.Backlinks()],
+  right: [Component.RecentNotes(), Component.Backlinks()],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)

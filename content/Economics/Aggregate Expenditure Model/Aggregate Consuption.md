@@ -1,0 +1,6 @@
+- Disposible Income ($Yd$) - Most Significant
+- [[Interest Rate]]
+- Stock of Wealth (property / shares / other assets)
+- Government Policy (e.g. Taxation)
+- Consumer Expectations
+- Business Expectations

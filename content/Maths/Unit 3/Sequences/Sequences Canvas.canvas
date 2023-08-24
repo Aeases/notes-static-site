@@ -1,0 +1,15 @@
+{
+	"nodes":[
+		{"type":"group","id":"9b4c6a593d1cc147","x":-640,"y":-420,"width":1247,"height":1077,"label":"Recursive"},
+		{"type":"group","id":"34a942ae52018da4","x":-680,"y":55,"width":1280,"height":465,"label":"Explicit"},
+		{"type":"file","file":"Maths/Unit 3/Sequences/Arithmetic Sequences.md","id":"93fba8fad011573d","x":40,"y":97,"width":520,"height":529},
+		{"type":"file","file":"Maths/Unit 3/Sequences/First Order Linear Recurrence Relation.md","id":"b3ff27ed48e30861","x":-220,"y":-380,"width":400,"height":400},
+		{"type":"file","file":"Maths/Unit 3/Sequences/Compound Interest with Sequences.md","id":"3dc5b3ef3db2c90b","x":300,"y":-520,"width":400,"height":400},
+		{"type":"file","file":"Maths/Unit 3/Sequences/Geometric Sequence.md","subpath":"#^ad3bd8","id":"2309e20d2f5f535e","x":-720,"y":-480,"width":400,"height":400},
+		{"type":"file","file":"Maths/Unit 3/Sequences/Geometric Sequence.md","id":"704e3d120fee28d9","x":-640,"y":97,"width":560,"height":400}
+	],
+	"edges":[
+		{"id":"bf3508dab3960e3a","fromNode":"b3ff27ed48e30861","fromSide":"bottom","toNode":"704e3d120fee28d9","toSide":"top"},
+		{"id":"639c76470d35074f","fromNode":"b3ff27ed48e30861","fromSide":"bottom","toNode":"93fba8fad011573d","toSide":"top"}
+	]
+}
