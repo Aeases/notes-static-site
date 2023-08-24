@@ -21,7 +21,7 @@ To find *effective interest rate* use the financial app on the calculator and fi
 ![[Pasted image 20230724095839.png]]
 (Effective annual interest rate questions page. 78)
 
-##### what does the effectiv eitnerest rate mean
-Over a year the interest will increase by x% over a year
+### What the Effective Interest Rate Means
+Over a year the interest will increase by **$x$%** over a year
 
 

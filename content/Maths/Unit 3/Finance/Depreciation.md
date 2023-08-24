@@ -6,7 +6,7 @@
 
 
 >[!warning]
->for the love of god take the thing out of $T_x=y$ and put it into $ or whatever the context is
+>for the love of god take the thing out of $T_x=y$ and put it into dollers or whatever the context is. is a good idea to surround it with a box too, e.g. $$T_x=400, \quad \boxed{\$400}$$
 
 
 
@@ -30,5 +30,16 @@ Where: $d$ = amount lost per year, $a$ = Principal, $n$ = number of years
 >$$\frac{Cost - \text{Residual Value}}{\text{Useful life of the asset}}=\frac{500,000 - 20,000}{(240,000 \div 10000)}=\text{\$20,000 Per Year}$$
 
 ### Unit Cost (based on usage)
-e.g. The amount of k's on your car.
+e.g. The amount of k's on your car, or hours the product was used for.
+
+$$\text{Depreciation p/unit}=\frac{Cost-\text{Residual Value}}{\text{\color{green}Total number of units produced}}$$
+
+>[!example]- A Machine with value **$\$330,000$**, and Residual Value of **$\$50,000$** produces **10,000** units a year, and **140,000** in it's lifetime. Calculate the depreciation expense for the first year and the book value of the machinery after the first year.
+>
+$$ \text{ Dep. Cost p/unit}= \frac{330,000-50,000}{140,000}=\color{green}\$2 \text{ p/Unit}$$
+$$2 \times 10,000= \boxed{\$20,000} \text{ <- Depreciation Expense}$$
+$$\$330,000 - \$20,000 = \boxed{\$310,000} \text{ <- Book Value Aft. 1y}$$
+
+$$$$
+
 
