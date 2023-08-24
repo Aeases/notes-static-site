@@ -1,0 +1,8 @@
+---
+cssclasses:
+  - no-inline
+---
+The multimodal text, <u>The Tracker</u> has transformed the traditional western genre to alter audience attitudes towards the impact of colonisation on lives of Indigenous Australians, From one, of, a dismissive and nonchalant attitude, to it a sympathetic and shocked one. <u>The Tracker</u> was released in 2002, and was set in 1920's frontier Australia. It followed an exploration of the frontier by a central idigenous tracker, who was in an oppressed situation, yet leads the group of three men. The group consisted of a shocking, vile Fanatic, the Veteran, and the Follower. 
+Together this group, led by the Tracker, explored the rugged frontier of Australia in search of an Indigenous man accused of murdering a wite woman,. Through the use of Stylistic Features such as cinematography and music [en scoil <-X] and audio codes along with language features the challenges the traditional western genre to alter audience attitudes towards Indigenous Australians experiences with colonisation.
+
+<u>The Tracker</u> has employed cinematograhy, mise en scene, and audio codes within the opening scene to foreground the Indigenous tracker as the central character, who is being controlled and subdued by the curel white man. This then challenges audience attitudes about the experience of indigenous Australians during colonisation. <u>The Tracker</u> has adopted a rebellious western genre to explore this. In the opening scene long panoramic shots of the land are taken, which represent the 'frontier', being the Australian Lanscsape. The long shots are then merged with paintings of the landscape. 
