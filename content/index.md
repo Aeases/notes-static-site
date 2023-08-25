@@ -23,5 +23,5 @@ title: Links out to a couple other notes
 - [[Applied-Information-Technology/Year-12---Unit-3/Impacts-of-Technology/Impacts-of-Technology-2.0|Impacts of Technology (Semester 2)]]
 
 ### Engineering
-- [[Engineering/Engineering-Maths/Beams-&-Bending|Beams and Bending]]
-- [[Engineering/Engineering-Maths/Deflection-of-Beams|Deflection of Beams]]
+- [[Engineering/Engineering-Maths/Engineering-Maths/Beams-&-Bending|Beams and Bending]]
+- [[Engineering/Engineering-Maths/Engineering-Maths/Deflection-of-Beams|Deflection of Beams]]
