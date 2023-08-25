@@ -8,8 +8,14 @@ export default (() => {
     if (text) {
       const segments: string[] = []
       //const { text: timeTaken, words: _words } = readingTime(text)
+      const author = fileData.frontmatter?.author
+      if (author == "minh") {
+        segments.push("Minh Tran")
+      } else {
+        segments.push("Zane Fitzgerald")
+      }
       if (fileData.dates?.modified) {
-        segments.push(formatDate(fileData.dates.modified))
+        segments.push(formatDate(fileData.dates.created))
       }
 
       //segments.push(timeTaken)
