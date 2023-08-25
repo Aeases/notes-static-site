@@ -56,6 +56,12 @@
     --bg: #db894210;
   }
 
+  &[data-callout="ai"] {
+    --color: #2b002b;
+    --border: #ff00e6d0;
+    --bg: #db894210;
+  }
+
   &[data-callout="failure"],
   &[data-callout="danger"],
   &[data-callout="bug"] {
