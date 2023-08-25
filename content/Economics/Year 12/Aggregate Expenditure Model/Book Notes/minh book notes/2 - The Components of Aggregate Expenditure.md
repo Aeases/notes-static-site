@@ -1,6 +1,7 @@
 ---
 cssclasses:
   - list-cards
+author: minh
 ---
 # 2.1 - Relevant Syllabus.
 - The components of aggregate expenditure (AE).

@@ -1,3 +1,6 @@
+---
+author: minh
+---
 en ta# 5.1 - Relevant Syllabus.
 - The impact of changes in each of the components of aggregate expenditure i.e. the multiplier process using the AE model.
 

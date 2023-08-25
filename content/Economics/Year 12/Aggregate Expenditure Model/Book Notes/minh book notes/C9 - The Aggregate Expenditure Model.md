@@ -1,3 +1,6 @@
+---
+author: minh
+---
 # The Syllabus.
 - [x] The components of aggregate expenditure (AE).
 	- [x] Consumption.

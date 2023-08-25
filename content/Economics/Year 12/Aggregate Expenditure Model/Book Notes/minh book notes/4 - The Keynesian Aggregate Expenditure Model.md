@@ -1,3 +1,6 @@
+---
+author: minh
+---
 # 4.1 - Relevant Syllabus.
 - The relationship between the consumption function, the marginal propensity to consume and the marginal propensity to save.
 

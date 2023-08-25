@@ -1,3 +1,6 @@
+---
+author: minh
+---
 # 1.1 - Summary.
 # 1.2 - Content.
 ## 1.2.1 - The relationship between GDP and aggregate expenditure.

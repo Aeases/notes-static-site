@@ -1,3 +1,6 @@
+---
+author: minh
+---
 # The consumption function.
 Aggregate expenditure = C + I + G + (X-M)
 

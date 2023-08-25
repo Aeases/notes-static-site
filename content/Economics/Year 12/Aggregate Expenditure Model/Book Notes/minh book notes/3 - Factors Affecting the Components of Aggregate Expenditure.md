@@ -1,6 +1,7 @@
 ---
 cssclasses:
   - list-cards
+author: minh
 ---
 # 3.1 - Relevant Syllabus.
 - Factors affecting each of the components of aggregate expenditure.
