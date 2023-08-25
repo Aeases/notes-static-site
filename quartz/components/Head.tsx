@@ -27,6 +27,7 @@ export default (() => {
         <script defer data-domain="zanefitzgerald.me" src="https://plausible.io/js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e892211d78ce48ebae0b70efdcd502cf"}'></script>
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}
