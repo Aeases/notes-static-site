@@ -4,10 +4,13 @@
 - Villain: The Fanatic, Victim: The Tracker, Hero: The Follower
 The hero operates outside the law; the follower threatens Fanatic with a gun
 when he is shooting innocent aboriginals.
-- Speech in praise of the villain; While not explicit, when the follower questions
-the legitimancy of the trackers tracking skills, the fanatic shows his confidence
+- Speech in praise of the villain; 
+While not explicit, when the follower questions the legitimancy of the trackers tracking skills, the fanatic shows his confidence
 in the trackers skills and allows the follower to make a fool of himself.
 
+
+Protagonists, The Tracker / The follower (sort of), Neither fit the western archetype. 
+		  [according to this website](https://classicwestern.wordpress.com/2015/03/13/the-classic-western-protagonist-archetype/), a Western's Protagonist is; "Strong-willed, Individualistic with a temper that can not be tamed, keen to defend  himself and his interests."
 
 Obligatory moments in the western/eastern genre
 

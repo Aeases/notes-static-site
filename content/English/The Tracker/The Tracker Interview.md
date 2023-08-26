@@ -26,5 +26,11 @@ It was common practise for trackers to come from somewhere else, *this is so tey
 Flynns ranges - David could not communicate at all with them
 Central Desert - David could half communicate
 He sort of mirrored this with 
+## Seperate Interview
 
+#### Purpose of the Paintings
+The brutal scenes were basically shifted from the film itself to the paintings to make the viewer look at the death scenes and macabre scenes differently -- to distance the audience.
+([source](https://www.rogerebert.com/reviews/the-tracker-2004))
+similarily, the officer's dialogue is volume decreased and replaced with music to distance the viewer, acting as "counterpoint" to the loud shouting
 
+"a film about memory, sadness, tragedy and distance, not a film that dramatizes what it laments."

@@ -1,6 +1,6 @@
 {
 	"nodes":[
-		{"type":"file","file":"English/Unit 3-4/The Tracker/attachments/Pasted image 20230821121738.jpg","id":"6ae0d2fc9c32a384","x":348,"y":-550,"width":267,"height":400},
+		{"type":"file","file":"Attachments/Pasted image 20230821121738.jpg","id":"6ae0d2fc9c32a384","x":348,"y":-550,"width":267,"height":400},
 		{"type":"text","text":"## Role: The Hero\n- Feels at home in the landscape. Viewers empathise wih his predicament as a tracker.\n- Outsmarts his colonial captors. Plays the **role of a subservient fool** to *the fanatic*, he ***challenges previous representations of savage natives***.","id":"638fe2a6902d11d8","x":668,"y":150,"width":368,"height":410,"color":"#000000"},
 		{"type":"text","text":"# The Tracker","id":"0c5b5b625abae610","x":357,"y":30,"width":258,"height":120,"color":"#000000"},
 		{"type":"text","text":"## The Tracker's Motif\nSun / Landscape\n```button\nname Hanging Scene\ntype command\naction Obsidian Webviews: Open gate The Tracker Hanging Scene\nclass mod-cta\n```\n","id":"a69338df27803f7d","x":321,"y":414,"width":323,"height":146,"color":"#000000"},
@@ -15,12 +15,12 @@
 		{"type":"text","text":"Intelligent","id":"5a7a041e5e8c8674","x":-468,"y":583,"width":194,"height":60,"color":"#000000"},
 		{"type":"text","text":"","id":"43c3ce77d35132ae","x":-1000,"y":578,"width":250,"height":60,"color":"#000000"},
 		{"type":"text","text":"## Archetypal Traits","id":"01e89e1890f7028d","x":-790,"y":-300,"width":347,"height":85,"color":"3"},
-		{"type":"text","text":"Complicit --> \n- Non-complicit\n\t- Decency\n\t- Brave\n\t- Overcomes Anxieties","id":"ec4c274a46eab134","x":-1282,"y":-360,"width":250,"height":177,"color":"3"},
+		{"type":"text","text":"Complicit --> \n- Non-complicit\n\t- Decency\n\t- Brave\n\t- Overcomes Anxieties","id":"ec4c274a46eab134","x":-1282,"y":-360,"width":250,"height":299,"color":"3"},
 		{"type":"text","text":"Overcomes Anxieties","id":"2874ea2d6513e0ef","x":-1800,"y":-296,"width":323,"height":56,"color":"3"},
 		{"type":"text","text":"He overcomes anxiety when he burns the ukelee and comes to the realisation that what he is doing is wrong.","id":"c95e9638e94c9378","x":-1917,"y":-445,"width":443,"height":112,"color":"3"},
 		{"type":"text","text":"## Role: The Villain\n- Feels he is inherently superior to the rest of his group\n- ","id":"933e453d8b0f8175","x":1360,"y":-702,"width":467,"height":352,"color":"1"},
 		{"type":"text","text":"# The Follower","id":"861dbdb98bfeefcb","x":-62,"y":-422,"width":291,"height":142,"color":"3"},
-		{"type":"text","text":"## Role: The ","id":"4a2ea1d36bbd0e84","x":-846,"y":-538,"width":404,"height":118,"color":"3"},
+		{"type":"text","text":"## Role: The ","id":"4a2ea1d36bbd0e84","x":-846,"y":-538,"width":527,"height":116,"color":"3"},
 		{"type":"text","text":"# The Fanatic","id":"3b83335f6176fd3d","x":716,"y":-420,"width":273,"height":140,"color":"1"},
 		{"type":"text","text":"# The Veteran","id":"7a8cdb3d8f898e22","x":348,"y":-900,"width":273,"height":140,"color":"5"},
 		{"type":"text","text":"","id":"28005d799cd743f9","x":927,"y":-1117,"width":250,"height":60}

@@ -1,8 +1,12 @@
 #### Characters
 - The *Tracker*
+	an aborigine who will lead them to their quarry, also an aborigine.
 - The *Follower*
+	a greenhorn new to the territory
 - The *Veteran*
+	A older man of few words
 - The *Fanatic*
+	A Merciless officer
 
 ### Plot Summary
 The aboriginal man
@@ -14,14 +18,45 @@ The aboriginal man
 - Symbolic Burning of the Ukelele (*loss of innosense*) with POIGANT organ music
 
 ---
-*song*
-"some can't be faulted for theirreasons, failing to justly invervene, some men hide from the memories that haunt, all men choose hte path they walk" < *the veteran*
-"some men see everything through duy, cast off responsibility some regret that their courage sometimes fails, all men choose the path they walk" < *the follower*
-"some men have attitude thats righteous, care not about the consequence, Some men fight with the violence inside, all men choose the path they walk" < *the fanatic* **(the leader)**
-"Some men have reached their destination, finding theor own serenity, some men lead others till they recognise, that all men choose the path they walk." < *the tracker*
-"All men choose the path they walk"
+#### All men choose - The Tracker
+[source](https://clickv.ie/w/YYSv)
+###### Aboriginal their chasing
+Some men are prone to mis adventure, 
+questions of guilt are not always clear.
+some men run from a fate they cant avoid, 
+all men choose the path they walk
 
----
+###### The Veteran
+Some can't be faulted for their reasons.
+failing to justly intervene.
+Some men hide from the memories that haunt, 
+all men choose the path they walk.
+^veteran-path-they-walk
+###### The Follower
+Some men see everything through duty.
+Cast off responsibility.
+Some regret their courage sometimes fails, 
+All men choose the path they walk.
+^follower-path-they-walk
+
+
+*music begins to get more upbeat*.
+###### The Fanatic
+Some men have attitude thats righteous.
+Care not about the consequence.
+Some men fight with the violence inside.
+All men choose the path they walk
+^fanatic-path-they-walk
+###### The Tracker
+Some men have reached their destination.
+Finding their own serenity.
+Some men lead others till they recognise,
+That all men choose the path they walk.
+^tracker-path-they-walk
+
+
+##### Post-killing
+
 "you shouldn't have killed those natives" < *the veteran*
 
 

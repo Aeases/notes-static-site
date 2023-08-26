@@ -18,6 +18,7 @@ import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Avatar from "./Avatar"
 import FlipDownTimer from "./FlipDownTimer"
+import GoldStraw from "./GoldStraw"
 
 export {
   ArticleTitle,
@@ -40,4 +41,5 @@ export {
   RecentNotes,
   Avatar,
   FlipDownTimer,
+  GoldStraw,
 }
