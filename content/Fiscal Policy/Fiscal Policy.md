@@ -2,11 +2,14 @@
 >[!seealso]- Syllabus Dotpoints
 >![[Syllabus - Economics#Fiscal policy]]
 
-Fiscal Policy helps the government achieve it's [[Economc Policy Objective]]s.
+Fiscal Policy is the shifting of **government spending**, and **Taxation** helps the government achieve it's [[Economc Policy Objective]]s.
 
 >[!warning] Memorise Budget for past couple years
 
 # The Main tool of Fiscal Policy
+
+>[!danger] Decision Lag
+>The budget has a very long [[Time Lags#Decision Lag|Decision Lag]] as the government must enact new Fiscal Policy as Legislation, and pass it in the budget either in May at release, or Nov-Jan in Alteration Period
 
 ### The (Commonwealth) Budget
 The estimated revenue and expenditure for the next year and future years of the Australian Government. It is the **main tool of *fiscal policy*.**
@@ -14,6 +17,13 @@ The estimated revenue and expenditure for the next year and future years of the 
 >[!seealso]+ Book Notes
 >![[L1 - Government Revenue and Expenditure#The Budget]]
 
+## Impacts of Fiscal Policy
+Fiscal Policy is predominantly focused on shifting **aggregate demand**, through changing government spending & taxation
+#### On the AD Curve
+- 
+#### On the Aggregate Supply Curve
+- Spending on infrastructure
+- The impact of income tax rates on participation in the work force (**Labour Supply**)
 
 
 ### Government Revenue Sources

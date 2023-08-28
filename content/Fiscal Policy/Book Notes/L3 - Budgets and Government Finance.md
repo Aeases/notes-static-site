@@ -1,3 +1,11 @@
+---
+aliases:
+  - Financing a Deficit
+  - Pros & Cons of Methods of Financing a Deficit
+---
+
+
+
 >[!question]
 >i. Explain each method of raising funds for the deficit
 >ii. Dicuss the advantages of each methods of raising funds for a deficit
@@ -23,14 +31,13 @@ Even if the Budget Deficit Falls from one year to the next, the effect is still 
 
 
 
-### Commonwealth Government Securities
-This refers to the selling of Government **Bonds**, they are responsible for 95% of the government's borrowing requirement. 
-
-
+### Commonwealth Government Securities / **Bonds**
+Commonwealth Government Securities, (CGS) / **Bonds**, can be sold by the government to finance a deficit.
+CGS / **Bonds** are responsible for 95% of the government's borrowing requirement. 
 - Bonds raise funds for their **issuer**, in return for a rate of interest to the buyer.
 - Bonds are guarranteed by the government, and thus, are very popular with instituitonal and private investment
 - Bonds are purchasable by both **Domestic** and **Foreign**, [[Residents]].
-	- Foreign Residents purchasing bonds **is not** "Borrowing from overseas"
+	- Foreign Residents purchasing bonds ***is*** ~~not~~ "Borrowing from overseas"
 - 45% of Bonds are owned by foreign businesses
 - In 2022, **$892b** worth of CGS is issued by the government.
 
@@ -39,8 +46,8 @@ This refers to the selling of Government **Bonds**, they are responsible for 95%
 	- This is because a leakage occurs at the time of borrowing, but then it is reinjcted into the econonomy since government only borrows when it has a deficit.
 	- So in the long-run, once the government spends the borrowed funds the effect [[Chapter 12 - Fiscal Policy.pdf#page=3&selection=1626,0,1632,7|effect on the money supply is nil]].
 ##### Disadvantages
-- When the government issues bonds it **competes** in the **Financial Market**,
-	- This can lead to the "[[L6 - Strengths & Weaknesses of Fiscal Policy#Crowding out|Crowding Out]]" of Private Investment Spending as they are outcompeted by bonds.
+- When the government issues bonds it **competes** in the **Financial Market**, leading to [[L6 - Strengths & Weaknesses of Fiscal Policy#Crowding out|Crowding Out]] out of Private Investment as their outcompeted by bonds that are comparatively cheaper.
+	
 
 ### Printing Money (The RBA)
 - The government can borrow from the RBA
@@ -54,11 +61,14 @@ The RBA is also **independant**, and thus can, if it decides that it would od ha
 	- #econs-example The RBA has said that they will not fund the current government's deficit.
 
 ### Borrowing from Overseas
->[!warning] This is not bonds
->This is different from forieng residents buying bonds
+>[!abstract] Foreign Residents can buy bonds too.
+>Foreigners buying bonds is the same thing as "Borrowing from Overseas"
 
+##### Advantages
 - This is when the govenrment takes on [[Foreign Debt]], directly borrowing from foreign banks.
 - This would result in a direct **inflow** of money capital.
+- Does **not** result in [[L6 - Strengths & Weaknesses of Fiscal Policy#Crowding out|Crowding Out]]. 
+- Generate Income remittances in the [[Balance of Payments]] ---> Ongoing det repayments for future generations pushing the [[Burden of Borrowing]] onto future generations as they must repay this debt.
 ##### Disadvantages
 -  causing an appreciation in the [[Exchange Rate]].
 - Adds to [[Foreign Debt]] / "**public** debt"
