@@ -1,0 +1,4 @@
+- Improvements in Technology
+- Efficiency
+- Resources
+- Population

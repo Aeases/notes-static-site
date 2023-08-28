@@ -1,0 +1,10 @@
+{
+	"nodes":[
+		{"id":"003de84abe3d0f2c","x":-346,"y":-280,"width":566,"height":1920,"type":"group","label":"WAGOLL - The Tracker"},
+		{"id":"a365efa42d014a7c","x":-326,"y":-154,"width":526,"height":1774,"type":"file","file":"English/The Tracker/WAGOLLs/Tracker WAGOLL.md"},
+		{"type":"text","text":"Explain how at least one text has transformed or adopted genre to alter an audiences attitude towards an issue or concept\n","id":"f300ace709b42589","x":-326,"y":-260,"width":526,"height":106,"color":"4"}
+	],
+	"edges":[
+		{"id":"0da753fd02b7b9be","fromNode":"f300ace709b42589","fromSide":"bottom","toNode":"a365efa42d014a7c","toSide":"top"}
+	]
+}

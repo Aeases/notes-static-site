@@ -23,9 +23,11 @@ export default (() => {
         <meta property="og:height" content="675" />
         <link rel="icon" href={iconPath} />
         <meta name="description" content={description} />
-        <meta name="generator" content="Quartz" />
+        <meta name="generator" content="Zane's Notes" />
+        <script defer data-domain="zanefitzgerald.me" src="https://plausible.io/js/script.js"></script>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e892211d78ce48ebae0b70efdcd502cf"}'></script>
         {css.map((href) => (
           <link key={href} href={href} rel="stylesheet" type="text/css" spa-preserve />
         ))}
