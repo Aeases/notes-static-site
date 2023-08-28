@@ -62,6 +62,18 @@
     --bg: #db894210;
   }
 
+  &[data-callout="Fiscal-Policy"] {
+    --color: #c9c900;
+    --border: #ffee00;
+    --bg: #d1d500d5;
+  }
+
+  &[data-callout="Monetary-Policy"] {
+    --color: #087e00;
+    --border: #68ff68;
+    --bg: #18b40365;
+  }
+
   &[data-callout="failure"],
   &[data-callout="danger"],
   &[data-callout="bug"] {
