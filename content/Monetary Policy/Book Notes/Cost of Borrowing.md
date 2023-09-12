@@ -1,6 +1,8 @@
 ---
 aliases:
   - Savings and Investment Incentives
+edited_seconds: 20
+updated_at: 2023-09-12T09:17:00.028+08:00
 ---
 >[!cite] Cost of Borrowing / Savings & Investment Incentives
 >A Channel of the [[Transmission Mechanism]]
@@ -18,5 +20,5 @@ Households Increase their savings as Interest Rates increase because of;
 #### ⬇Cash Rate (Expan.) 
 Expansionary Monetary Policy is generally less effective in a contraction or trough.
 Businesses **do necessarily react** to lower costs of borrowing during periods of low economic confidence in prospects while [[Aggregate Demand]] is low.
-
-A pertinant example is in recent years with *record low* interest rates of 0.1%, yet Investment was still low.
+	A pertinant example is in recent years with *record low* interest rates of 0.1%, yet Investment was still low.
+Lower Interest Rates can encourage **household borrowing**, as they can pay lower repayments

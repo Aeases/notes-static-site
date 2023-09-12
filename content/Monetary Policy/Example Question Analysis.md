@@ -1,12 +1,24 @@
 ---
-edited_seconds: 1260
-updated_at: 2023-09-12T08:10:28.518+08:00
+edited_seconds: 1430
+updated_at: 2023-09-12T09:41:09.777+08:00
 ---
 
 >[!warning]
 >***focus on monetary policy and what it's meant to achieve, do not veer off into talkign about the rest of the economy***
 
->[!cite] Descuss the contemporary monetary policy setting of the Reserve Bank of Australia with reference to the busienss cycle the intended effects on key economic sectors and it's effectiveness in influencing aggregate demand.
+>[!cite] Discuss the contemporary monetary policy setting of the Reserve Bank of Australia with reference to the busienss cycle the intended effects on key economic sectors and it's effectiveness in influencing aggregate demand.
+
+Monetary Policy is th way in which the Reserve Bank of Australia manipulates, Aggregate Demand, Inflation, and Employment. It does this through the conventional "Main tool of Fiscal Policy", the Cash Rate, which currently sits at **4.1%**
+
+
+
+
+
+
+
+
+
+
 
 Monetary Policy is the way in which the Reserve Bank of Australia, an independant entity with the Objectives of; Achieving Price Stability (Stable Inflation), Maintaining a level of Full employment, and Economic Prosperity and Wellbeing for the country of Australia, can influence the levels of **Employment**, **Inflation**, and **Aggregate Demand**. They do this through the Main tool of Fiscal Policy; the Interbank Overnight Cash Rate, or Cash Rate for short. Currently the Cash Rate is 4.1%, though that has not been the case over the contemporary period, in 2020, as a result of COVID lockdowns in By June 2020 the economy entered a trough, unemployment spiked to 7.5%, inflation dropped to -0.3, Monetary Policy entered an expansionary stance, going to the lowest rate ever at 0.10%, this was maintained 
 

@@ -1,7 +1,7 @@
 ---
 book-source: 
-edited_seconds: 130
-updated_at: 2023-09-11T09:02:37.571+08:00
+edited_seconds: 460
+updated_at: 2023-09-12T10:00:26.986+08:00
 ---
 
 >[!success] pretty much te opposite of the [[L6 - Strengths & Weaknesses of Fiscal Policy|Fiscal Policy Strengths & Weaknessses]]
@@ -53,6 +53,14 @@ There was a 3 year gap between RBA economic activity between **3rd of Augest 201
 Monetary Policy was in an ***expansioanry stance***, since between **5th of June of 2019**, and **4th of November 2020**, the Cash Rate went from 0.25% all the way
 
 ## Limiting Expansionary Monetary Policy
-##### Banks not passing on lower interest rates
 
-##### 
+##### Current Levels of Inflation are due to **Supply-side** pressures.
+Interest Rates can not really impact supply-side pressures, this is amplified by conflicting policy.
+##### E.R Channel is not effective as seen by low exchange rates
+Even though Australia has been raising the Interest Rate, economic confidence globally is low, and central banks in other countris, like the USA have increased their cash rate equivalent beyond the 4.1% of ours, reachign 5.5 per-cent, this means there is actually a negative Interest Rate differential between us and the US, simultaneously the US is also seen as a less risky target for investment in comparison to Australia. This has led to the current Ineffectiveness of the Exchange Rate Channel being less effective in influencing Aggregate Demand as our rising interest rates have not reduced International Competitiveness or imports as a result of a movement in the exchange rate.
+
+
+##### Conflicting Policy, Fiscal is Expansionary, Monetary is Contractionary
+
+
+##### Banks not passing on lower interest rates

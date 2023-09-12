@@ -1,15 +1,20 @@
 ---
-edited_seconds: 20
-updated_at: 2023-09-11T09:34:29.277+08:00
+edited_seconds: 120
+updated_at: 2023-09-12T10:12:42.695+08:00
 ---
 ## Monetary Policy Stances
 
 ###### Expansionary Monetary Stance
 - When there is **upwards movement** in the [[Cash Rate]] over a period of time.
 	- Cash Rate is increasing.
+- 
 ###### Contractionary Monetary Stance
 - When there is a **downwards movement** in the [[Cash Rate]] over a period of time.
 	- Cash Rate is going down.
+- Effect of a Contractionary Stance;
+	- Reduction in Overall Real GDP / Aggregate Expenditure
+	- Reduction in overall price levels ([[Inflation]])
+	- 
 ## Understanding the Neutral Monetary Policy Stance
 The Neutral policy stance is when we are at [[#The Neutral Rate]] for the Cash Rate.
 
@@ -54,6 +59,8 @@ In the models above we can see the impact of Contractionary [[Monetary Policy]].
 	- Assuming Economic Activity was beyond it's potential, beyond the [[Long Run Aggregate Supply Curve|LRAS Curve]], at $Y_1$, and price levels at $P_1$
 	- Contractionary Stance shifts AD curve to the left ($AD_1$ to $AD_2$)
 		- This reduces **both** the **rate of [[Economic Growth|Growth]]**, and the rate of increases in prices ([[Inflation]])
+
+
 
 
 

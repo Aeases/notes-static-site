@@ -1,6 +1,6 @@
 ---
-edited_seconds: 390
-updated_at: 2023-09-11T14:11:27.072+08:00
+edited_seconds: 620
+updated_at: 2023-09-12T10:09:44.040+08:00
 ---
 
 # The GFC
@@ -48,6 +48,9 @@ A High Exchange rate **reduces [[International Competiveness]]**.
 	- Increased *Industrial Production*
 - February 2020; Phillip Lowe (governer of RBA), stated;
 	- "The Australian economy had reached a gentle turning point, with growth expected to pick up from an average rate of **2 percent over 2018-19** to ***2.75 percent in 2020***, and **3 percent in 2021**"
+
+# The Contemporary Period
+
 ## 2020
 - In March of 2020 the RBA introduced **Expansionary Policy Measures**, as well as some [[M9 - Unconventional Monetary Policy]], including;
 	- Quantitative Easing 
@@ -89,5 +92,17 @@ Numerous Factors influenced the May 2022 RBA Decision;
 	- RBA allowed it's bonds to expire at maturity instead of re-selling them again on the [[Secondary Market]]
 	- RBA is on the lookout for wage pressures
 - Unemployment rate has driven down to 3.4%, lowest in sixty years.
+
+## 2023
+- Increases in the Cash Rate
+	- From 3.35 in February
+	- To 4.10% in September
+- Tight Labour Market
+	- We are beyond Full Employment
+	- Unemployment Rate = 3.7% in July, unchanged from January.
+		- RBA foresees [[Augst RBA M.P Minutes#^a49ad8|constriction of demand]] as a result of Increased Interest Rates, possibly leading to Labour Market decline.
+- Slight Inflation Decline
+	- From **7.8%** in December of 2022
+	- To **6%** in June of 2023
 
 

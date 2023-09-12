@@ -1,6 +1,6 @@
 ---
-edited_seconds: 150
-updated_at: 2023-09-12T08:24:32.027+08:00
+edited_seconds: 160
+updated_at: 2023-09-12T10:09:42.032+08:00
 ---
 ## International economic developments
 
@@ -64,7 +64,7 @@ In turning to the policy decision, members noted that the data released over the
 
 Members noted that the information received on inflation over the prior month had been reassuring. Inflation had fallen further and been a little lower than expected in the June quarter. However, members observed that there had not yet been any material slowing in services price inflation, and the experience globally had been that services price inflation was more persistent than expected. Members also noted that inflation for some services (including rent and insurance) may rise further, given those items’ historical patterns of persistence and the current conditions in these markets.
 
-Members observed that the labour market had continued to show considerable resilience. The unemployment rate was very low and had remained around 3½ per cent for a full year. However, there were some signs that the labour market was at a turning point, including a small rise in the underemployment rate. More generally, members noted signs that the substantial rise in interest rates over the prior year was constraining demand, including in the retail sector, where the value of sales had not grown for some time.
+Members observed that the labour market had continued to show considerable resilience. The unemployment rate was very low and had remained around 3½ per cent for a full year. However, there were some signs that the labour market was at a turning point, including a small rise in the underemployment rate. More generally, members noted signs that the substantial rise in interest rates over the prior year was constraining demand, including in the retail sector, where the value of sales had not grown for some time. ^a49ad8
 
 Members considered the implications of the staff’s forecasts. These forecasts were little changed from three months earlier and remained consistent with the economy staying on the narrow path that the Board is seeking to navigate. Members noted the conditioning assumption for the cash rate underlying these forecasts was higher than it had previously been, given the increases in May and June.
 
