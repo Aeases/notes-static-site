@@ -22,6 +22,7 @@ title: Links out to a couple other notes
 - [[Syllabus - Economics]]
 - [[Wealth Effect|The Wealth Effect]]
 - [[Economics/Aggregate-Expenditure-Model/Book-Notes/|Aggregate Expenditure Model (Chapter 9)]]
+- [[Monetary Policy]]
 
 ## Engineering
 -  [[Syllabus - Engineering]]

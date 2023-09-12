@@ -1,0 +1,1 @@
+From Context I assume this refers to the market for "**second-hand** bonds", that is bonds that were sold to an individual, who then re-sold that bond to someone else.
