@@ -1,3 +1,6 @@
+---
+updated_at: 2023-09-14T07:55:51.197+08:00
+---
 
 
 ```todoist
@@ -16,7 +19,7 @@ filter: "search: English 8"
 >filter: "search: English 10"
 >```
 
->[!cite]- Relevant Syllabus Dotpoints
+>[!syllabus]- Relevant Syllabus Dotpoints
 >![[Syllabus - English#Investigate and evaluate the relationships between texts and contexts by]]
 >![[Syllabus - English#Evaluate different perspectives, attitudes and values represented in texts by]]
 >![[Syllabus - English#Evaluate how texts offer perspectives through]]

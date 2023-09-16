@@ -1,3 +1,6 @@
+#genre 
+
+
 [Western and Eastern Genre: Stories of Subjugation and Freedom (storygrid.com)](https://storygrid.com/western-eastern-genre/#:~:text=The%20Western%2FEastern%20genre%20has%20five%20necessary%20conventions%3A%201,the%20hero%20and%20villain%20is%20large.%20More%20items)
 
 - Harsh, Hostile, wide-open landscape in the australian outback

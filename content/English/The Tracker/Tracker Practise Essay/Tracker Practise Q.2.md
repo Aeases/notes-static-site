@@ -1,6 +1,8 @@
 ---
 cssclasses:
   - no-inline
+  - list-cards
+  - max
 ---
 >[!question] Discuss *the way* in which at least one studied text has <u>manipulated aspects of <b>genre</b></u> for a <u>particular <b>purpose</b></u>.
 # Attempt 1
@@ -49,7 +51,6 @@ Westerns as a whole are known for their bold embrace of violence. The tracker is
 		- all that 
 - Focus on how The Tracker depicts australian culture through the group. predominatly the hesistance towards the actions of the fanatic, especially after the first massacure.
 	- great point to refer to is the [[Tracker Analysis#All men choose - The Tracker|All men choose song]], music is not usually utilised in a Western to this degree, and in a exposition-esque way.
-	- 
 - Manipulates it's position as a Western FIlm, omits the most extremely violent scenes by covering them with paintings.
 	- Westerns are typically known for their violent scenes, despite this T.T omits them to emphasise the fictional events real counterparts in australian history.
 	- all motion is removed from the screen, something unusal in films 
@@ -70,12 +71,34 @@ T.T simultaneously subverts it's position as a Western Film, and as a Film in ge
 In westerns the leadup to shootouts and other climatic scenes are typically tense, we are made acutely aware that a life is on the line. In T.T, the leadup is present but not re-inforced, it is cheraded boosting it's impact when it does arrive. Most prevelantly demonstrated in the First Massacure, when both *the follower* and *the fanatic* berade innocent aboriginals, waving guns in faces, their yelling toned out by moderately paced music. Music which suddenly cuts out to Extradiegetic audio of gunshots and screams, as well as a painting depicting what had just occured. The lack of warning and reliance on the viewer to fill in the gaps leaves an impact with the audience, thereby raising awareness to the dark history of Australia.
 
 ###### Body Paragraph 3
+
+- Run out of time 
+
 ![[Pasted image 20230827000801.png]]
 
 ###### Conclusion
 Heer has manipulated the conventions of the traditional Western Genre, altering Antagonist/Protagonist Stereotypes, the Classic Old Western Final Shootout Climax, and altering it's approach to high action scenes to best serve the amplification of the perceived severity and shamefullness of Australia's dark colonial history in today's context, allowing new audiences to understand the tragedies the aboriginal people went through in their full light. 
 
+# Attempt 3
+##### The Plan
+###### Body Paragraph 1
+Juxtapose these two;
+- **Loud** **Extra**-diegetic Audio & **Quiet Diegetic** audio (Can see what's happening)
+	- Representing how carelessness / Indifference to the actions they are taking, they aren't paying attention to what is happening in the real world, 
+	- this is very unusual for a western, which traditionally are very grounded etc.
+- No Extra-diegetic Audio, **Loud** Diegetic Audio (gunshots) --> total silence (Painting covers screen)
+	- Represents the Viewer & the follower being brought back to reality, and the harshness typically present within a western.
+	-  It manipulates the western genre by diverging away from it, almost blocking out the violence, before audioally embracing it at the climax of the action.
+	- Though while embracing the western genre, it covers the screen with a painting. 
+###### Body Paragraph 2
+- In the hanging scene, *the tracker* 
 
+##### Introduction
+Westerns are a portal to a foreign past, they allow a Director to convey their view of society as it was. Rolf De Heer did just this in his notorious 2002 Western; "**The Tracker**". Set in 1922, the film chronicles a unnamed group of whites, led by an unnamed aboriginal man hereafter referred to as *the tracker*, who assists them in locating a aboriginal accused of murder so that he can be sent for his time on the noose. Throughout the film Heer has made divergances from the standard Western format in order to amplify the perceived severity, and depict the shamefullness of Australia's dark colonial history.
+
+
+###### Body Paragraph 1
+ 
 
 
 
