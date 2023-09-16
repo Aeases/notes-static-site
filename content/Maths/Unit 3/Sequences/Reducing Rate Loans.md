@@ -1,0 +1,3 @@
+---
+aliases: Reducible Interest Loans
+---

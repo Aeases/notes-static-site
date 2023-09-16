@@ -1,0 +1,77 @@
+## 3.1 Bivarite Data Analysis (20hr)
+#### The Statistical Investigation Process
+- [ ] review the statistical investigation process: identify a problem; pose a statistical question; collect or obtain data; analyse data; interpret and communicate results
+#### Identifying and describing assosciations between two categorical variables
+- [ ] Construct [[Frequency Tables#Two-Way Frequency Tables|two way frequency tables]] and determine the *assosciated row and column sums and **Percentages**
+- [ ] Use an appropriately percentaged [[Frequency Tables|Frequency Table]] to identify patterns and sugges the presence of an assosciation
+- [ ] Describe an ssosciation in terms of differences observed in percentages across categories in a systematic and concise manner, and interpret this in the context of the data.
+#### Identifying and describing associations between two numerical variables
+- [ ] Construct a scatterplot to identify patterns in the data suggesting the presence of an association
+- [ ] Describe an [[Linear Relationships#Direction Of Linear Relationships|association between two numerical variables in terms of direction]] (positive/negative)
+- [ ] **[[Correlation Coefficient#Calculating "*r*"|Calculate, using technology]]**, and interpret the [[Correlation Coefficient]] (*r*),to **[[Linear Relationships#Types of Relationships|quanity the strength of a linear association]]**
+#### Fitting a linear model to numerical data
+- [ ] Identify [[Relationship Variables#Explanatory Variable|Relationship Variables]] and [[Relationship Variables#Response Variable|Response Variables]] for primary and secondary data
+- [ ] use a [[Scatterplot]] to identify the nature of the relationship between variables
+- [ ] model a [[Linear Relationships|Linear Relationship]] by fitting a [[Regression Line|Least-Squares Regression Line]] to the data
+- [ ] use a [[Residuals#Residual Plot|Residual Plot]] to assess the appropriateness of fitting a [[Linear Model]] to the data (*Linear model explained in [[Residuals]]*)
+- [ ] Interpret the intercept and slope of the fitted line
+- [ ] use the [[Coefficient Of Determination]] to assess the strength of a linear association in terms of the explained variation
+- [ ] use the equation of a fitted line to make predictions
+- [ ] distinguish between [[Interpolation and Extrapolation]] when using the fitted line to make predictions, recognising the potential [[Dangers of Extrapolation]].
+- [ ] write up the results of the above analysis in a systematic and concise manner
+#### [[Association and Causation]]
+- [ ] Recognise that an observed assosciation between two variables does not necessarily mean that there is a causal relationship between them.
+- [ ] identify possible non-causal explanation for an assosciation, including coincidence and confounding due to a common response to another variable, and communicate these explanations in a systematic and concise manner.
+
+> **Test 1 - Response - Bivariate Data Analysis - (7%) - Term 1 Week 2**
+
+#### The data investigation process
+- [ ] Implement the statistical investigation process to answer questions that involve identifying, analysing and describing associations between two categorical variables or between two numerical variables.
+
+> [[Investigation 1 - Bivariate Data Analysis]] (6%) - Term 1 Week 9**
+
+## 3.2 Growth and decay in sequences (15 hours)
+
+#### The [[Arithmetic Sequences]]s
+- [x] use [[Recursion]] to generate an arithmetic sequence
+> *I would interpret this as a [[Arithmetic Sequences#(* First Order Linear Recurrence Relation First-Order Recurrance *) Arithmetic Sequence / Relation Formula|Recursive Arithmetic Sequence]]*
+- [x] display the terms of an [[Arithmetic Sequences]] in both tabular and graphical form and demonstrate that arithmetic sequences can be used to model [[Linear Growth or Decay]] and decay in discrete situations.
+- [x] Deduce a rule for the $n^{th}$ term of a particular [[Arithmetic Sequences]] from the pattern of the terms in an arithmetic sequence, and use this rule to make predictions.
+- [x] use arithmetic sequences to model and analyse practical situations involving [[Linear Growth or Decay]].
+#### The [[Geometric Sequence]]
+- [ ] use recursion to generate a [[Geometric Sequence]]
+> Again, I would interpret this as creating a [[Geometric Sequence#(* First Order Linear Recurrence Relation First-Order Recurrance *) Geometric Sequence Formula|Recursive Geometric Sequence]]
+- [ ] display the terms of a geometric sequence in both tabular and graphical form and demonstrate that [[Geometric Sequence]]s can be used to model [[exponential growth and decay]] in discrete situations
+- [ ] deduce a rule for the $n^{th}$ term of a particular [[Geometric Sequence]] from the pattern of the terms in the sequence, and use this rule to make predictions
+- [ ] use [[Geometric Sequence]]s to model and analyse (numerically, or graphically only) practical problems involving [[Geometric growth and decay]].
+#### Sequences generated by [[First Order Linear Recurrence Relation]]
+- [ ] use a general [[First Order Linear Recurrence Relation]] relation to generate the terms of a sequence and to display it in both tabular and graphical form
+- [ ] generate a sequence defined by a [[First Order Linear Recurrence Relation]] that gives long term increasing, decreasing or steady-state solutions
+- [ ] use [[First Order Linear Recurrence Relation|First Order Linear Recurrence relations]] to model and analyse (numerically or graphically only) practical problems
+
+> **Test 2 - Growth & Decay in Sequences - (6%) - Term 1 Week 8
+
+> **Investigation 2 - Growth & Decay in Sequences - (7%) Term 1 Week 9
+
+## 3.3 Graphs and networks (20 hours)
+
+#### The definition of a graph and assosciated terminology
+- [ ] Demonstrate the meanings of, and use, the terms: graph [[Edge]], [[Vertex]], [[Loop]], [[degree of a vertex]],[[subgraph]], [[simple graph]], [[complete graph]], [[Bipartite Graphs]], [[Directed graph]] (digraph), [[Edge|Arc]], [[Weighted graph]], and [[network]].
+- [ ] Identify practical situations that can be represented by a [[network]], and construct such networks.
+- [ ] Construct an [[Adjacency Matrix]] from a given graph or digraph and use the matrix to solve assosciated problems.
+#### [[Planar Graph]]s
+- [ ] Demonstrate the meanings of, and use, the terms: [[Planar Graph]] and [[Face]].
+- [ ] apply Euler's formula, $v+f-e=2$ to solve problems relating to [[Planar Graph]]s.
+#### Paths and cycles
+- [ ] Demonstrate the meanings of, and use, the terms: [[[Walk]], [[Trail]], [[Path]], [[Closed walk]], [[Closed trail]], [[Cycle]], [[Connected Graph]], and [[Bridge]].
+- [ ] Investigate and solve practical problems to determine the shortest path between two vertices in a [[Weighted graph]]. (by trial and error methods only)
+- [ ] Demonstrate the meanings of, and use, the terms: [[Eulerian Trail]], [[Eulerian graph]], [[semi-Euerlian trail]], and the conditions for their existence, and use these concepts to investigate and solve practical problems.
+- [ ] Demonstrate the meanings of, and use, the terms: [[Hamiltonian graph]], and [[semi-Hamiltonian graph]], and use these concepts to investigate and solv practical problems
+
+
+> **Test 3 - Graphs & Networks - (7%) - Term 2 Week 3
+
+> **Exam - (15%) - Term 2 Week 5-6** 
+
+
+

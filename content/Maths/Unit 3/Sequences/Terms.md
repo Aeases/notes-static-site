@@ -1,0 +1,1 @@
+The nubmers in a sequence

@@ -18,6 +18,9 @@ import Footer from "./Footer"
 import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
+import Avatar from "./Avatar"
+import FlipDownTimer from "./FlipDownTimer"
+import GoldStraw from "./GoldStraw"
 
 export {
   ArticleTitle,
@@ -40,4 +43,7 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
+  Avatar,
+  FlipDownTimer,
+  GoldStraw,
 }

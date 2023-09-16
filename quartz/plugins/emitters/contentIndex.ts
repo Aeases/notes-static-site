@@ -56,7 +56,7 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     <guid>${root}/${encodeURI(slug)}</guid>
     <description>${content.richContent ?? content.description}</description>
     <pubDate>${content.date?.toUTCString()}</pubDate>
-  </item>`
+  </items>`
 
   const items = Array.from(idx)
     .map(([slug, content]) => createURLEntry(simplifySlug(slug), content))
@@ -68,12 +68,11 @@ function generateRSSFeed(cfg: GlobalConfiguration, idx: ContentIndex, limit?: nu
     <channel>
       <title>${escapeHTML(cfg.pageTitle)}</title>
       <link>${root}</link>
-      <description>${!!limit ? `Last ${limit} notes` : "Recent notes"} on ${
-        cfg.pageTitle
-      }</description>
+      <description>Recent content on ${cfg.pageTitle}</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       ${items}
     </channel>
+    ${items}
   </rss>`
 }
 

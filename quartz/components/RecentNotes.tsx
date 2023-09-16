@@ -46,11 +46,11 @@ export default ((userOpts?: Partial<Options>) => {
                       </a>
                     </h3>
                   </div>
-                  {page.dates && (
+{/*                   {page.dates && (
                     <p class="meta">
                       <Date date={getDate(cfg, page)!} />
                     </p>
-                  )}
+                  )} */}
                   <ul class="tags">
                     {tags.map((tag) => (
                       <li>
