@@ -15,8 +15,9 @@ title: Links out to a couple other notes
 
 ## English
 - [[Tracker Analysis]]
+- [[The Tracker English Panel Discussion]]
+- [[The Tracker Analytical-Comparative Essay]]
 - [[The Tracker Interview|Tracker Interview]]
-
 
 ## Economics
 - [[Syllabus - Economics]]
