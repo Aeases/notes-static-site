@@ -32,8 +32,8 @@ export default (() => {
               id="search-bar"
               name="search"
               type="text"
-              aria-label="Search for something"
-              placeholder="Search for something"
+              aria-label="Find a note"
+              placeholder="Find a note..."
             />
             <div id="results-container"></div>
           </div>

@@ -15,7 +15,7 @@ export default (() => {
         segments.push("Zane Fitzgerald")
       }
       if (fileData.dates?.modified) {
-        segments.push(formatDate(fileData.dates.modified))
+        segments.push(formatDate(fileData.dates.created))
       }
       
 

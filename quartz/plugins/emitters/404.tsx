@@ -17,13 +17,13 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
     right: [],
   }
 
-  const { head: Head, pageBody, footer: Footer } = opts
+  const { head: Head, pageBody } = opts
   const Body = BodyConstructor()
 
   return {
     name: "404Page",
     getQuartzComponents() {
-      return [Head, Body, pageBody, Footer]
+      return [Head, Body, pageBody]
     },
     async emit(ctx, _content, resources, emit): Promise<FilePath[]> {
       const cfg = ctx.cfg.configuration

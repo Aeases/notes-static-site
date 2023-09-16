@@ -1472,7 +1472,7 @@ var ContentMeta_default = /* @__PURE__ */ __name(() => {
         segments.push("Zane Fitzgerald");
       }
       if (fileData.dates?.modified) {
-        segments.push(formatDate(fileData.dates.modified));
+        segments.push(formatDate(fileData.dates.created));
       }
       return /* @__PURE__ */ jsx18("p", { class: "content-meta", children: segments.join(", ") });
     } else {
@@ -1929,8 +1929,8 @@ var Search_default = /* @__PURE__ */ __name(() => {
             id: "search-bar",
             name: "search",
             type: "text",
-            "aria-label": "Search for something",
-            placeholder: "Search for something"
+            "aria-label": "Find a note",
+            placeholder: "Find a note..."
           }
         ),
         /* @__PURE__ */ jsx26("div", { id: "results-container" })
@@ -2719,12 +2719,12 @@ var NotFoundPage = /* @__PURE__ */ __name(() => {
     left: [],
     right: []
   };
-  const { head: Head, pageBody, footer: Footer } = opts;
+  const { head: Head, pageBody } = opts;
   const Body2 = Body_default();
   return {
     name: "404Page",
     getQuartzComponents() {
-      return [Head, Body2, pageBody, Footer];
+      return [Head, Body2, pageBody];
     },
     async emit(ctx, _content, resources, emit) {
       const cfg = ctx.cfg.configuration;
@@ -2788,7 +2788,8 @@ var config = {
         },
         darkMode: {
           light: "#092a35",
-          lightgray: "#5b7681",
+          //lightgray: "#5b7681",
+          lightgray: "#1a3b47",
           gray: "#646464",
           darkgray: "#d4d4d4",
           dark: "#ebebec",
@@ -2804,14 +2805,14 @@ var config = {
       FrontMatter(),
       TableOfContents(),
       CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"]
+        priority: ["frontmatter", "git"]
         // you can add 'git' here for last modified from Git but this makes the build slower
       }),
       SyntaxHighlighting(),
       ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
       GitHubFlavoredMarkdown(),
       CrawlLinks({ markdownLinkResolution: "shortest" }),
-      Latex({ renderEngine: "katex" }),
+      Latex({ renderEngine: "mathjax" }),
       Description()
     ],
     filters: [RemoveDrafts()],

@@ -2,6 +2,7 @@ import { Document, SimpleDocumentSearchResultSetUnit } from "flexsearch"
 import { ContentDetails } from "../../plugins/emitters/contentIndex"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, resolveRelative } from "../../util/path"
+import { byDateAndAlphabetical } from "../PageList"
 
 interface Item {
   id: number
@@ -105,6 +106,8 @@ document.addEventListener("nav", async (e: unknown) => {
     if (sidebar) {
       sidebar.style.zIndex = "1"
     }
+/*     const opts = { ...defaultOptions(cfg), ...userOpts }
+    const pages = data.filter(true) */
     container?.classList.add("active")
     searchBar?.focus()
   }
