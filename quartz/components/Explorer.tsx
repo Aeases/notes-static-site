@@ -10,7 +10,7 @@ const defaultOptions = (): Options => ({
   title: "Explorer",
   folderClickBehavior: "collapse",
   folderDefaultState: "collapsed",
-  useSavedState: true,
+  useSavedState: false,
 })
 export default ((userOpts?: Partial<Options>) => {
   function Explorer({ allFiles, displayClass, fileData }: QuartzComponentProps) {
@@ -25,7 +25,7 @@ export default ((userOpts?: Partial<Options>) => {
     fileTree.sort()
 
     // Get all folders of tree. Initialize with collapsed state
-    const folders = fileTree.getFolderPaths(opts.folderDefaultState === "collapsed")
+    const folders = fileTree.getFolderPaths(opts.folderDefaultState !== "collapsed")
 
     // Stringify to pass json tree as data attribute ([data-tree])
     const jsonTree = JSON.stringify(folders)
@@ -39,6 +39,7 @@ export default ((userOpts?: Partial<Options>) => {
           data-collapsed={opts.folderDefaultState}
           data-savestate={opts.useSavedState}
           data-tree={jsonTree}
+          class="collapsed"
         >
           <h3>{opts.title}</h3>
           <svg
@@ -56,7 +57,7 @@ export default ((userOpts?: Partial<Options>) => {
             <polyline points="6 9 12 15 18 9"></polyline>
           </svg>
         </button>
-        <div id="explorer-content">
+        <div id="explorer-content" class="collapsed">
           <ul class="overflow">
             <ExplorerNode node={fileTree} opts={opts} fileData={fileData} />
           </ul>

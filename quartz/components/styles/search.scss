@@ -100,9 +100,10 @@
 
       & > #results-container {
         & .result-card {
-          padding: 1em;
-          cursor: pointer;
-          transition: background 0.2s ease;
+          padding: 14px;
+          padding-left: 24px;
+          cursor: crosshair;
+          transition: background 0.2s cubic-bezier(0.37, -0.52, 1, -0.02);;
           border: 1px solid var(--lightgray);
           border-bottom: none;
           width: 100%;
@@ -118,13 +119,15 @@
           outline: none;
 
           & .highlight {
-            color: var(--secondary);
             font-weight: 700;
           }
 
           &:hover,
           &:focus {
-            background: var(--lightgray);
+            & {
+              background: var(--lightgray);
+            }
+
           }
 
           &:first-of-type {
@@ -140,6 +143,8 @@
 
           & > h3 {
             margin: 0;
+            font-size: revert;
+            font-weight: 400;
           }
 
           & > ul > li {
@@ -182,6 +187,7 @@
 
           & > p {
             margin-bottom: 0;
+            display: none
           }
         }
       }
