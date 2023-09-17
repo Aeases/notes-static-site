@@ -19,6 +19,7 @@ import DesktopOnly from "./DesktopOnly"
 import MobileOnly from "./MobileOnly"
 import RecentNotes from "./RecentNotes"
 import Avatar from "./Avatar"
+import ExcalidrawComponent from "./Excalidraw"
 import FlipDownTimer from "./FlipDownTimer"
 import GoldStraw from "./GoldStraw"
 
@@ -45,5 +46,6 @@ export {
   NotFound,
   Avatar,
   FlipDownTimer,
+  ExcalidrawComponent,
   GoldStraw,
 }

@@ -136,7 +136,7 @@ a {
       flex: 1;
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
       top: 0;
       width: $sidePanelWidth;
       margin-top: $topSpacing;
@@ -158,6 +158,8 @@ a {
         gap: 0;
         align-items: center;
       }
+      gap: 1.5rem;
+
     }
 
     & .sidebar.right {

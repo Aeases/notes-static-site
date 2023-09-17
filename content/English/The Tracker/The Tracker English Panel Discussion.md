@@ -94,8 +94,7 @@ Presents all ideas clearly and coherently during the panel discussion. Engages i
 >Tyson - Nature and Landscape
 >
 >####### [Second Massacure](https://clickv.ie/w/_DXv)
->###### []()
->
+
 
 ## Order
 ###### Intro - Tyson

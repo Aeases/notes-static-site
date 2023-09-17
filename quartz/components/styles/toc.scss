@@ -30,10 +30,16 @@ button#toc {
   overflow: hidden;
   max-height: none;
   transition: max-height 0.5s ease;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 
-  &.collapsed > .overflow::after {
-    opacity: 0;
+  & ::-webkit-scrollbar {
+    display: none;
   }
+
+/*   &.collapsed > .overflow::after {
+    opacity: 0;
+  } */
 
   & ul {
     list-style: none;

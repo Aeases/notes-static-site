@@ -175,6 +175,10 @@ document.addEventListener("nav", async (e: unknown) => {
       finalDesc += ".."
     }
 
+    if (finalDesc.includes("⚠")) {
+      finalDesc = ""
+    }
+
     return finalDesc
   }
 
