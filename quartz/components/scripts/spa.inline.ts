@@ -94,11 +94,19 @@ function createRouter() {
       const { url } = getOpts(event) ?? {}
       if (!url) return
       event.preventDefault()
+      if (!document.startViewTransition) {
+        try {
+          navigate(url, false)
+        } catch (e) {
+          window.location.assign(url)
+        }
+      }
       try {
-        navigate(url, false)
+        document.startViewTransition(() => navigate(url, false))
       } catch (e) {
         window.location.assign(url)
       }
+
     })
 
     window.addEventListener("popstate", (event) => {

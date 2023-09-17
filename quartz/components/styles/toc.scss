@@ -37,9 +37,9 @@ button#toc {
     display: none;
   }
 
-  &.collapsed > .overflow::after {
+/*   &.collapsed > .overflow::after {
     opacity: 0;
-  }
+  } */
 
   & ul {
     list-style: none;
