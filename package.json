@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@clack/prompts": "^0.6.3",
+    "@excalidraw/excalidraw": "^0.16.1",
     "@floating-ui/dom": "^1.4.0",
     "@napi-rs/simple-git": "0.1.9",
     "async-mutex": "^0.4.0",
