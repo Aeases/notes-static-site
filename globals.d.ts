@@ -8,6 +8,6 @@ export declare global {
     startViewTransition: any
   }
   interface Window {
-    spaNavigate(url: URL, isBack: boolean = false)
+    spaNavigate(url: URL, isBack: boolean = false, isTransition: boolean = false)
   }
 }

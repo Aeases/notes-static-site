@@ -33,8 +33,47 @@ function notifyNav(url: FullSlug) {
   document.dispatchEvent(event)
 }
 
+function navigateClick(url: URL, isBack: boolean, event: Event) {
+  let target = event.target
+  if (!isElement(target)) return
+  const a = target.closest("a")
+  console.log(a)
+  if (a && a.classList.contains("internal")) {
+    let child = a.querySelector(".popover")
+    if (child != null) {
+      a.removeChild(child)
+    }
+    console.log(a.style.color)
+    a.style.transitionDuration = '0s'
+    a.style.color = 'white'
+    // @ts-ignore
+    a.style.viewTransitionName = 'transition_title'
+  }
+  
+  let title = document.querySelector(".article-title")
+  if (title) {
+    // @ts-ignore
+    title.style.viewTransitionName = ''
+  }
+
+  document.startViewTransition(() => navigate(url, isBack, true))
+
+  
+}
+
+function handleViewTransition(to: Document, from: Document) {
+  let to_title = to.querySelector(".article-title")
+  let from_title = from.querySelector("title")
+  
+  if (to_title?.textContent) {
+    // @ts-ignore
+    to_title.style.viewTransitionName = "transition_title"
+  }
+}
+
 let p: DOMParser
-async function navigate(url: URL, isBack: boolean = false) {
+async function navigate(url: URL, isBack: boolean = false, isTransition: boolean) {
+
   p = p || new DOMParser()
   const contents = await fetch(`${url}`)
     .then((res) => res.text())
@@ -43,8 +82,13 @@ async function navigate(url: URL, isBack: boolean = false) {
     })
 
   if (!contents) return
+  
+
 
   const html = p.parseFromString(contents, "text/html")
+  if (isTransition) {
+    handleViewTransition(html, document)
+  }
   let title = html.querySelector("title")?.textContent
   if (title) {
     document.title = title
@@ -96,13 +140,13 @@ function createRouter() {
       event.preventDefault()
       if (!document.startViewTransition) {
         try {
-          navigate(url, false)
+          navigate(url, false, false)
         } catch (e) {
           window.location.assign(url)
         }
       }
       try {
-        document.startViewTransition(() => navigate(url, false))
+        navigateClick(url, false, event)
       } catch (e) {
         window.location.assign(url)
       }
@@ -113,7 +157,9 @@ function createRouter() {
       const { url } = getOpts(event) ?? {}
       if (window.location.hash && window.location.pathname === url?.pathname) return
       try {
-        navigate(new URL(window.location.toString()), true)
+        console.debug("Triggering Navigate Popstate")
+        if (!document.startViewTransition()) navigate(new URL(window.location.toString()), true, false)
+        navigate(new URL(window.location.toString()), true, true)
       } catch (e) {
         window.location.reload()
       }
@@ -124,7 +170,8 @@ function createRouter() {
   return new (class Router {
     go(pathname: RelativeURL) {
       const url = new URL(pathname, window.location.toString())
-      return navigate(url, false)
+      console.debug("Triggered Go Navigate Return")
+      return navigate(url, false, false)
     }
 
     back() {
