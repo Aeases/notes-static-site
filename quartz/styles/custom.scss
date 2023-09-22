@@ -1,1 +1,29 @@
 // put your custom CSS here!
+::view-transition-old(transition_title) {
+    /* Prevent the default animation,
+    so both views remain opacity:1 throughout the transition */
+    //animation: none;
+    /* Use normal blending,
+    so the new view sits on top and obscures the old view */
+    //mix-blend-mode: normal;
+    background-color: transparent;
+    color: white;
+    scale: 0.25;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition-timing-function: cubic-bezier(.4,1.22,.5,.52);
+}
+
+::view-transition-new(transition_title) {
+    /* Prevent the default animation,
+    so both views remain opacity:1 throughout the transition */
+    animation: none;
+    /* Use normal blending,
+    so the new view sits on top and obscures the old view */
+    mix-blend-mode: normal;
+}
+
+/* .click-transition {
+    background-color: transparent !important;
+    color: white !important;
+} */

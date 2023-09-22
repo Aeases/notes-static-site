@@ -43,9 +43,13 @@ function navigateClick(url: URL, isBack: boolean, event: Event) {
     if (child != null) {
       a.removeChild(child)
     }
+    a.style.transitionDuration = 'unset'
+    a.style.backgroundColor = 'transparent'
+    a.style.setProperty('color', 'var(--dark)', 'important')
+    a.classList.add(".click-transition")
+
+
     console.log(a.style.color)
-    a.style.transitionDuration = '0s'
-    a.style.color = 'white'
     // @ts-ignore
     a.style.viewTransitionName = 'transition_title'
   }
@@ -145,11 +149,15 @@ function createRouter() {
           window.location.assign(url)
         }
       }
-      try {
-        navigateClick(url, false, event)
-      } catch (e) {
-        window.location.assign(url)
+
+      if (document.startViewTransition) {
+        try {
+          navigateClick(url, false, event)
+        } catch (e) {
+          window.location.assign(url)
+        }
       }
+
 
     })
 
