@@ -1,7 +1,8 @@
 import { FilePath, pathToRoot } from "../util/path"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+
 import styles from "./styles/avatar.scss"
-import pkg, { Excalidraw } from '@excalidraw/excalidraw';
+//import excalidraw from '@excalidraw/excalidraw';
 const DRAWING_REG = /\n# Drawing\n[^`]*(```json\n)([\s\S]*?)```\n/gm; //https://github.com/zsviczian/obsidian-excalidraw-plugin/issues/182
 import { compressToBase64, decompressFromBase64 } from "lz-string";
 import { readFileSync } from 'fs';
@@ -10,7 +11,10 @@ import { Path } from "to-vfile/lib";
 // @ts-ignore
 import script from "./scripts/Excalidraw.inline"
 import * as fs from 'fs';
-ExcalidrawComponent.afterDOM = script
+import { Fragment } from "preact/jsx-runtime";
+import pkg from "@excalidraw/excalidraw";
+import { createRef } from "preact";
+import { useEffect, useState } from "preact/hooks";
 
 function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
     
@@ -21,9 +25,24 @@ function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
     fileData.filePath */
     if (fileData.filePath != undefined) {
         let ExcaliData = GetMDExcalidrawJSON(fileData.filePath)
+        
+/*         const [Excalidraw, setExcalidraw] = useState(null)
+        useEffect(() => {
+            // @ts-ignore
+            import("@excalidraw/excalidraw").then((comp) => setExcalidraw(comp.Excalidraw));
+        }, []); */
+
+
+
         if (ExcaliData != null) {
+                    // @ts-ignore
+/*             let f = pkg.exportToSvg(ExcaliData)
+            f.then((e) => {
+                Ex.querySelector("#fuck")?.appendChild(e)
+            }) */
             //return <>{Excalidraw && <Excalidraw />}</>
-            return <><blockquote class="callout is-collapsible is-collapsed" data-callout="warning" data-callout-fold="" style="max-height: 90px;">
+            return <Fragment>
+            <blockquote class="callout is-collapsible is-collapsed" data-callout="warning" data-callout-fold="" style="max-height: 90px;">
             <div class="callout-title">
                               <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
                               <div class="callout-title-inner"><p>This is an Excalidraw, they can not be viewed from the website.</p></div>
@@ -32,7 +51,15 @@ function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
                             </svg>
                             </div>
             <p>The JSON content could technically be copied into a .excalidraw file and that could be loaded with obsidian excalidraw plugin maybe??</p>
-            </blockquote></>
+            </blockquote>
+
+            <hr />
+            <br />
+            <br />
+            <div id="fuck">
+                
+            </div>
+            </Fragment>
         }
     }
     return <div></div>
@@ -67,4 +94,5 @@ export function GetMDExcalidrawJSON(file: FilePath): JSON | null {
 }
 
 //ExcalidrawComponent.css = styles
+//ExcalidrawComponent.afterDOMLoaded = script
 export default (() => ExcalidrawComponent) satisfies QuartzComponentConstructor

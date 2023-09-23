@@ -1,5 +1,4 @@
 import { FolderState } from "../ExplorerNode"
-
 // Current state of folders
 let explorerState: FolderState[]
 

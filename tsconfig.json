@@ -9,11 +9,15 @@
     "incremental": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    "paths": {
+      "react": ["./node_modules/preact/compat/"],
+      "react-dom": ["./node_modules/preact/compat/"],
+    },
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
   },
   "include": ["**/*.ts", "**/*.tsx", "./package.json"],
   "exclude": ["build/**/*.d.ts"]

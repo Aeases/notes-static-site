@@ -22,7 +22,6 @@ export const defaultContentPageLayout: PageLayout = {
     Component.DesktopOnly(Component.Explorer()),
   ],
   right: [
-    Component.ExcalidrawComponent(),
     Component.Graph(),
     Component.DesktopOnly(Component.Search()),
     Component.DesktopOnly(Component.TableOfContents()),
