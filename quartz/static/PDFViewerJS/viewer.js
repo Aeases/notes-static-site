@@ -3068,7 +3068,7 @@ const defaultOptions = {
     kind: OptionKind.VIEWER + OptionKind.PREFERENCE
   },
   imageResourcesPath: {
-    value: "./images/",
+    value: "/static/images/",
     kind: OptionKind.VIEWER
   },
   maxCanvasPixels: {
@@ -3190,7 +3190,7 @@ const defaultOptions = {
 };
 {
   defaultOptions.defaultUrl = {
-    value: "Values-and-Attitudes_asset.pdf",
+    value: document.getElementById("fileData")?.innerText, //! this is an incredibly devious hacky way to do this
     kind: OptionKind.VIEWER
   };
   defaultOptions.disablePreferences = {

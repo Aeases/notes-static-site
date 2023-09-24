@@ -3,10 +3,13 @@ import isAbsoluteUrl from "is-absolute-url"
 import { isUrl } from "vfile/lib/minurl.shared"
 import styles from "../styles/PDFComponent.scss"
 
+
+
+
 document.addEventListener("nav", () => {
     const PDFView = document.getElementById("pdfView")
     const fileSlug = document.getElementById("fileData")?.innerText
-
+    PDFViewerApplicationOptions.set("defaultUrl", "/English/Concepts/Values-and-Attitudes_asset.pdf")
     if (PDFView?.classList.contains("hidden")) return
 
     //console.log(PDFView)

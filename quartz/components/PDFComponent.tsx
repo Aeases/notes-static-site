@@ -47,6 +47,7 @@ function PDFComponent({ tree, fileData }: QuartzComponentProps) {
             )} else {
                 return(
                     <>
+  <p id="fileData" style="display: none">{`/${newSlug}`}</p>
   <div id="outerContainer">
     <div id="sidebarContainer">
       <div id="toolbarSidebar">
@@ -1166,7 +1167,7 @@ function PDFComponent({ tree, fileData }: QuartzComponentProps) {
             }
         }
 PDFComponent.css = styles
-PDFComponent.afterDOMLoaded = script
+PDFComponent.beforeDOMLoaded = script
 export default (() => PDFComponent) satisfies QuartzComponentConstructor
 
 
