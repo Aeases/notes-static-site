@@ -36,6 +36,11 @@ export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) =>
     async emit(ctx, content, resources, emit): Promise<FilePath[]> {
       const  fps: FilePath[] = []
       const allFiles = content.map((c) => c[1].data)
+      resources.js.push({
+        src: "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.10.111/build/pdf.min.js",
+        contentType: "external",
+        loadTime: "afterDOMReady",
+      })
       const cfg = ctx.cfg.configuration
 
       for (const [tree, file] of content) {

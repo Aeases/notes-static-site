@@ -41,6 +41,23 @@ export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
       const cfg = ctx.cfg.configuration
       const argv = ctx.argv
       let fps: FilePath[] = []
+      resources.js.push({
+        contentType: "external",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.4.120/pdf.min.js", //* https://mozilla.github.io/pdf.js/build/pdf.js
+        loadTime: "afterDOMReady"
+      },
+      {
+        contentType: "external",
+        src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js", //* https://unpkg.com/pdfjs-dist@3.10.111/web/pdf_viewer.js
+        loadTime: "beforeDOMReady",
+      },
+      {
+        contentType: "external",
+        "src": "https://cdn.jsdelivr.net/gh/dealfonso/pdfjs-viewer@1.1/pdfjs-viewer.min.js",
+        loadTime: "afterDOMReady"
+      }
+      
+      )
       const allFiles = content.map((c) => {
         console.log(c)
         return (c[1].data)
