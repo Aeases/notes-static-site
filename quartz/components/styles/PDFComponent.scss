@@ -10,16 +10,16 @@
 :root .toolbar {
 }
 @media all and (min-width: $fullPageWidth) {
-    .page-header {
-        display: none;
-    }
+
 
     .pdfPage {
         border-radius: 16px;
     }
 
     .center:has(.pdfPage) {
-
+        .page-header {
+            display: none;
+        }
         & .right.sidebar {
             display: none !important;
         }
