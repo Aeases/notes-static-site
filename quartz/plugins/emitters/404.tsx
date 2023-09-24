@@ -5,7 +5,7 @@ import { pageResources, renderPage } from "../../components/renderPage"
 import { FullPageLayout } from "../../cfg"
 import { FilePath, FullSlug } from "../../util/path"
 import { sharedPageComponents } from "../../../quartz.layout"
-import { NotFound } from "../../components"
+import { Explorer, NotFound } from "../../components"
 import { defaultProcessedContent } from "../vfile"
 
 export const NotFoundPage: QuartzEmitterPlugin = () => {
@@ -13,7 +13,7 @@ export const NotFoundPage: QuartzEmitterPlugin = () => {
     ...sharedPageComponents,
     pageBody: NotFound(),
     beforeBody: [],
-    left: [],
+    left: [Explorer()],
     right: [],
   }
 
