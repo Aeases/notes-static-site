@@ -43,10 +43,10 @@ function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
             }) */
             //return <>{Excalidraw && <Excalidraw />}</>
             return <article class="popover-hint">
-            <blockquote class="callout" data-callout="bug" style="max-height: 90px; border: none;">
+            <blockquote class="callout" data-callout="bug" style="max-height: 90px; border: none; border-radius: 10em;">
             <div class="callout-title">
                               <div class="callout-icon" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-                              <div class="callout-title-inner"><p>This is an Excalidraw, they can not be viewed from the website.</p></div>
+                              <div class="callout-title-inner prevent-select"><p>This is an Excalidraw, they can not be viewed from the website.</p></div>
                             </div>
             </blockquote>
             <div id="fuck">

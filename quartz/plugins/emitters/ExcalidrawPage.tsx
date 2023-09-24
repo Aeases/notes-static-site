@@ -22,8 +22,6 @@ export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) =>
     left: [...defaultContentPageLayout.left],
     right: [],
     pageBody: ExcalidrawComponent(),
-    ...userOpts,
-    //footer: Backlinks()
   }
 
   const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
