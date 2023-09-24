@@ -45,7 +45,14 @@ async function buildQuartz(argv: Argv, mut: Mutex, clientRefresh: () => void) {
 
   perf.addEvent("glob")
   const allFiles = await glob("**/*.*", argv.directory, cfg.configuration.ignorePatterns)
-  const fps = allFiles.filter((fp) => fp.endsWith(".md")).sort()
+  //const NonMarkdownFiles = await glob("**/*.*", argv.directory, [...cfg.configuration.ignorePatterns, "**/*.md"]
+  // ! Filter allFiles to just markdown files
+  const fps = allFiles.filter((fp) => {
+    if (fp.endsWith(".md")) {
+      return(fp)
+    }
+  })
+  fps.sort()
   console.log(
     `Found ${fps.length} input files from \`${argv.directory}\` in ${perf.timeSince("glob")}`,
   )
@@ -53,9 +60,9 @@ async function buildQuartz(argv: Argv, mut: Mutex, clientRefresh: () => void) {
   const filePaths = fps.map((fp) => joinSegments(argv.directory, fp) as FilePath)
   ctx.allSlugs = allFiles.map((fp) => slugifyFilePath(fp as FilePath))
 
-  const parsedFiles = await parseMarkdown(ctx, filePaths)
-  const filteredContent = filterContent(ctx, parsedFiles)
-  await emitContent(ctx, filteredContent)
+  const parsedFiles = await parseMarkdown(ctx, filePaths) //* Parse to Markdown
+  const filteredContent = filterContent(ctx, parsedFiles) //* Apply Filter Plugins
+  await emitContent(ctx, filteredContent) //! Apply Emitter Plugins
   console.log(chalk.green(`Done processing ${fps.length} files in ${perf.timeSince()}`))
   release()
 

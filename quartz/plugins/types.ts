@@ -41,6 +41,7 @@ export type QuartzEmitterPluginInstance = {
     content: ProcessedContent[],
     resources: StaticResources,
     emitCallback: EmitCallback,
+    //NonMarkdownFiles?: ProcessedContent[],
   ): Promise<FilePath[]>
   getQuartzComponents(ctx: BuildCtx): QuartzComponent[]
 }

@@ -39,8 +39,9 @@ export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) =>
       const cfg = ctx.cfg.configuration
 
       for (const [tree, file] of content) {
+        
         const slug = file.data.slug!
-        console.log(slug)
+        //console.log(slug)
         if (slug.endsWith(".excalidraw") || slug.endsWith(".excalidraw.md")) {
           //const tag = slug.slice("tags/".length)
           const externalResources = pageResources(pathToRoot(slug), resources)
