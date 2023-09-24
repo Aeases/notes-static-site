@@ -1,0 +1,1 @@
+Sibilance is like [[Alliteration]] except with sssssssssssssssss sounds

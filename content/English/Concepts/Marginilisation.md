@@ -1,0 +1,1 @@
+The pushing aside of ideas that do not fit the norm
