@@ -64,6 +64,7 @@ const config: QuartzConfig = {
       Plugin.ContentPage(),
       Plugin.FolderPage(),
       Plugin.ExcalidrawPage(),
+      Plugin.PDFPage(),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,

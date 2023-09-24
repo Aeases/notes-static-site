@@ -22,7 +22,6 @@ export async function emitContent(ctx: BuildCtx, content: ProcessedContent[]) {
     await fs.promises.writeFile(pathToPage, content)
     return pathToPage
   }
-
   let emittedFiles = 0
   const staticResources = getStaticResourcesFromPlugins(ctx)
   for (const emitter of cfg.plugins.emitters) {

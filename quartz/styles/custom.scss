@@ -47,3 +47,14 @@
         -ms-user-select: none; /* IE 10 and IE 11 */
         user-select: none; /* Standard syntax */
       }
+
+    .pdf {
+      width: 100%;
+      height: 60vh;
+      border-radius: 16px;
+      filter: drop-shadow(0 0 14px var(--gray));
+    }
+
+  .toolbar {
+      background-color: red;
+  }

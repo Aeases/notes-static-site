@@ -1,0 +1,49 @@
+@use "../../styles/variables.scss" as *;
+.pdfPage {
+    width: 100%;
+    height: 100vh;
+    border: 6px #404046;
+    opacity: 0;
+    transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+
+:root .toolbar {
+}
+@media all and (min-width: $fullPageWidth) {
+    .page-header {
+        display: none;
+    }
+
+    .pdfPage {
+        border-radius: 16px;
+    }
+
+    .center:has(.pdfPage) {
+
+        & .right.sidebar {
+            display: none !important;
+        }
+
+        & .graph {
+            display: none !important;
+            opacity: 0;
+        }
+
+        background-color: #404046;
+        margin-top: 0;
+        margin-right: 0% !important;
+        margin-left: 20vw !important;
+        flex-grow: 1
+    }
+
+    
+    .page:has(.pdfPage) .left {
+        left: 0 !important;
+        height: 100%;
+        padding: 0;
+        flex-shrink: 1
+    }
+
+
+}
+

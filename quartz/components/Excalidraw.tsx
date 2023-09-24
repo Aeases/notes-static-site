@@ -65,18 +65,18 @@ export function GetMDExcalidrawJSON(file: FilePath): JSON | null {
     let res = text.matchAll(DRAWING_REG)
     let parts = res.next();
     let scene: string = ""
-    console.log("Parts")
+    console.debug("Parts")
     if (parts.value && parts.value.length > 1) {
         let result = parts.value[2];
-        console.log("Made It to the finals")
+        console.debug("Made It to the finals")
         scene = result.substr(0, result.lastIndexOf("}") + 1)
     }
     let FinalJSON
     try {
         FinalJSON = JSON.parse(scene)
-        console.log("Tried & Succeeded") 
+        console.debug("Tried & Succeeded") 
     } catch (error) {
-        console.log("Failure")
+        console.debug("Failure")
         return(null)
     }
 	//let f = getMarkdownDrawingSection(text, false)
