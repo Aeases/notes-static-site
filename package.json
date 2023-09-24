@@ -58,6 +58,7 @@
     "mdast-util-to-hast": "^12.3.0",
     "mdast-util-to-string": "^3.2.0",
     "micromorph": "^0.4.5",
+    "pdfjs": "^2.5.2",
     "plausible-tracker": "^0.3.8",
     "preact": "^10.14.1",
     "preact-render-to-string": "^6.0.3",

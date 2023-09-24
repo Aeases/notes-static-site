@@ -13,15 +13,15 @@ import {
   pathToRoot,
 } from "../../util/path"
 import { defaultContentPageLayout, defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
-import { ArticleTitle, Backlinks, ExcalidrawComponent, Graph, PageTitle, TagContent } from "../../components"
+import { ArticleTitle, Backlinks, ExcalidrawComponent, Graph, PDFComponent, PageTitle, TagContent } from "../../components"
 
-export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
+export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     beforeBody: [ArticleTitle()],
     left: [...defaultContentPageLayout.left],
     right: [],
-    pageBody: ExcalidrawComponent(),
+    pageBody: PDFComponent(),
     ...userOpts,
     //footer: Backlinks()
   }
@@ -31,7 +31,7 @@ export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) =>
   const Body = BodyConstructor()
 
   return {
-    name: "ExcalidrawPage",
+    name: "PDFPage",
     getQuartzComponents() {
       return [Head, Header, Body, ...header, ...beforeBody, pageBody, ...left, ...right, Footer]
     },
@@ -43,7 +43,7 @@ export const ExcalidrawPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) =>
       for (const [tree, file] of content) {
         const slug = file.data.slug!
         console.log(slug)
-        if (slug.endsWith(".excalidraw") || slug.endsWith(".excalidraw.md")) {
+        if (slug.endsWith(".pdf")) {
           //const tag = slug.slice("tags/".length)
           const externalResources = pageResources(pathToRoot(slug), resources)
           const componentData: QuartzComponentProps = {

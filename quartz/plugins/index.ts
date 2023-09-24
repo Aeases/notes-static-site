@@ -8,10 +8,16 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
     js: [{
       src: 'https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.development.js',
       contentType: "external",
-      loadTime: "afterDOMReady",
+      loadTime: "beforeDOMReady",
       moduleType: "module",
       spaPreserve: true
     },
+    {
+      src: "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.10.111/build/pdf.min.js",
+      contentType: "external",
+      loadTime: "afterDOMReady",
+      moduleType: "module",
+    }
 /*     {
       src: 'https://unpkg.com/react@18.2.0/umd/react.development.js',
       contentType: "external",

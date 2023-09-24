@@ -22,6 +22,7 @@ import Avatar from "./Avatar"
 import ExcalidrawComponent from "./Excalidraw"
 import FlipDownTimer from "./FlipDownTimer"
 import GoldStraw from "./GoldStraw"
+import PDFComponent from "./PDFComponent"
 
 export {
   ArticleTitle,
@@ -48,4 +49,5 @@ export {
   FlipDownTimer,
   ExcalidrawComponent,
   GoldStraw,
+  PDFComponent
 }

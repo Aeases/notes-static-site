@@ -17,47 +17,18 @@ import { createRef } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import Backlinks from "./Backlinks";
 
-function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
-    
-/*     let fileText: string | null = null
-    if (fileData.text) {
-        fileText = fileData.text
-    }
-    fileData.filePath */
-    if (fileData.filePath != undefined) {
-        let ExcaliData = GetMDExcalidrawJSON(fileData.filePath)
-        
-/*         const [Excalidraw, setExcalidraw] = useState(null)
-        useEffect(() => {
-            // @ts-ignore
-            import("@excalidraw/excalidraw").then((comp) => setExcalidraw(comp.Excalidraw));
-        }, []); */
-
-
-
-        if (ExcaliData != null) {
-                    // @ts-ignore
-/*             let f = pkg.exportToSvg(ExcaliData)
-            f.then((e) => {
-                Ex.querySelector("#fuck")?.appendChild(e)
-            }) */
-            //return <>{Excalidraw && <Excalidraw />}</>
-            return <article class="popover-hint">
-            <blockquote class="callout" data-callout="bug" style="max-height: 90px; border: none;">
+function PDFComponent({ fileData }: QuartzComponentProps) {
+            return <Fragment>
+            <blockquote class="callout" data-callout="warning" style="max-height: 90px;">
             <div class="callout-title">
-                              <div class="callout-icon" style="display: block"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
-                              <div class="callout-title-inner"><p>This is an Excalidraw, they can not be viewed from the website.</p></div>
+                              <div class="callout-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg></div>
+                              <div class="callout-title-inner"><p>This is a PDF, they cannot be viewed from the website.</p></div>
                             </div>
             </blockquote>
             <div id="fuck">
-                
             </div>
-            </article>
+            </Fragment>
         }
-    }
-    return <div></div>
-}
-
 
 
 export function GetMDExcalidrawJSON(file: FilePath): JSON | null {
@@ -87,5 +58,5 @@ export function GetMDExcalidrawJSON(file: FilePath): JSON | null {
 }
 
 //ExcalidrawComponent.css = styles
-ExcalidrawComponent.afterDOMLoaded = script
-export default (() => ExcalidrawComponent) satisfies QuartzComponentConstructor
+PDFComponent.afterDOMLoaded = script
+export default (() => PDFComponent) satisfies QuartzComponentConstructor
