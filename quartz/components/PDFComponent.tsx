@@ -11,7 +11,6 @@ import { Path } from "to-vfile/lib";
 // @ts-ignore
 import script from "./scripts/PDFComponent.inline"
 import styles from "./styles/PDFComponent.scss"
-import { Document } from 'react-pdf'
 import * as fs from 'fs';
 import { Fragment } from "preact/jsx-runtime";
 import pkg from "@excalidraw/excalidraw";
@@ -20,8 +19,11 @@ import { useEffect, useState } from "preact/hooks";
 import Backlinks from "./Backlinks";
 import { render } from "preact-render-to-string";
 
-function PDFComponent({ tree, fileData }: QuartzComponentProps) {
+function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProps) {
+            externalResources.css.push("/static/PDFViewerJS/viewer.css")
+            
             let slug = fileData.slug?.split(".")
+            fileData
             if (!slug) return(<div>No PDF Found</div>)
             let seperated = slug[0] + "_asset"
             let newSlug = [seperated, slug[1]].join(".")

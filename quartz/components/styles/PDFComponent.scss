@@ -24,9 +24,9 @@
   z-index: 50;
 }
 
-.quartz-body {
+/* .quartz-body {
   overflow: hidden !important;
-}
+} */
 
 
 button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#sidebarToggle {
@@ -90,7 +90,7 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
     .page:has(#viewerContainer) .left {
         left: 0 !important;
         height: 100%;
-        padding: 0;
+        //padding: 0;
         flex-shrink: 1
     }
 

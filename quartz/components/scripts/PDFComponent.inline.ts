@@ -4,7 +4,7 @@ import { isUrl } from "vfile/lib/minurl.shared"
 import styles from "../styles/PDFComponent.scss"
 
 
-
+///const { default: "gfgsdg" } = "gfsgdfgfdgfd"
 
 document.addEventListener("nav", () => {
     const PDFView = document.getElementById("pdfView")

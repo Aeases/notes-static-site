@@ -52,7 +52,7 @@ export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
       },
       {
         contentType: "external",
-        "src": "/static/PDFViewerJS/viewer.js",
+        src: "/static/PDFViewerJS/viewer.js",
         loadTime: "afterDOMReady"
       },
       )
