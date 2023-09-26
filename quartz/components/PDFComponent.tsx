@@ -625,6 +625,27 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
                 >
                   <span data-l10n-id="next_label">Next</span>
                 </button>
+                <div className="splitToolbarButton">
+                <button
+                  id="zoomOut"
+                  className="toolbarButton"
+                  title="Zoom Out"
+                  tabIndex={21}
+                  data-l10n-id="zoom_out"
+                >
+                  <span data-l10n-id="zoom_out_label">Zoom Out</span>
+                </button>
+                <div className="splitToolbarButtonSeparator" />
+                <button
+                  id="zoomIn"
+                  className="toolbarButton"
+                  title="Zoom In"
+                  tabIndex={22}
+                  data-l10n-id="zoom_in"
+                >
+                  <span data-l10n-id="zoom_in_label">Zoom In</span>
+                </button>
+              </div>
               </div>
               <input
                 type="number"
@@ -667,8 +688,8 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
               >
                 <span data-l10n-id="save_label">Save</span>
               </button>
-              <div className="verticalToolbarSeparator hiddenMediumView" />
-              <div
+{/*               <div className="verticalToolbarSeparator hiddenMediumView" />
+ */}              <div
                 id="editorModeButtons"
                 className="splitToolbarButton toggled"
                 role="radiogroup"
@@ -715,10 +736,10 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
                   </span>
                 </button>
               </div>
-              <div
+{/*               <div
                 id="editorModeSeparator"
                 className="verticalToolbarSeparator"
-              />
+              /> */}
               <button
                 id="secondaryToolbarToggle"
                 className="toolbarButton"
@@ -732,27 +753,7 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
               </button>
             </div>
             <div id="toolbarViewerMiddle">
-              <div className="splitToolbarButton">
-                <button
-                  id="zoomOut"
-                  className="toolbarButton"
-                  title="Zoom Out"
-                  tabIndex={21}
-                  data-l10n-id="zoom_out"
-                >
-                  <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                </button>
-                <div className="splitToolbarButtonSeparator" />
-                <button
-                  id="zoomIn"
-                  className="toolbarButton"
-                  title="Zoom In"
-                  tabIndex={22}
-                  data-l10n-id="zoom_in"
-                >
-                  <span data-l10n-id="zoom_in_label">Zoom In</span>
-                </button>
-              </div>
+
               <span id="scaleSelectContainer" className="dropdownToolbarButton">
                 <select
                   id="scaleSelect"

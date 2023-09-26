@@ -43,20 +43,23 @@ export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
       resources.js.push({
         contentType: "external",
         src: "/static/PDFViewerJS/pdf.js", //* https://mozilla.github.io/pdf.js/build/pdf.js
-        loadTime: "afterDOMReady"
+        loadTime: "afterDOMReady",
+        spaPreserve: false,
       },
       {
         contentType: "external",
         src: "/static/PDFViewerJS/pdf.worker.js", //* https://unpkg.com/pdfjs-dist@3.10.111/web/pdf_viewer.js
         loadTime: "afterDOMReady",
+        spaPreserve: false,
       },
       {
         contentType: "external",
         src: "/static/PDFViewerJS/viewer.js",
-        loadTime: "afterDOMReady"
+        loadTime: "afterDOMReady",
+        spaPreserve: false,
       },
       )
-      resources.css.push("/static/PDFViewerJS/viewer.css")
+      //resources.css.push("/static/PDFViewerJS/viewer1.css")
 
       const allFiles = content.map((c) => {
         console.log(c)
