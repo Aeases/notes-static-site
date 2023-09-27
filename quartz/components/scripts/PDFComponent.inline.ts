@@ -1,11 +1,16 @@
 import { url } from "inspector"
 import isAbsoluteUrl from "is-absolute-url"
 import { isUrl } from "vfile/lib/minurl.shared"
-import styles from "../styles/PDFComponent.scss"
 
-document.addEventListener("nav", () => {
+
+///const { default: "gfgsdg" } = "gfsgdfgfdgfd"
+
+/* document.addEventListener("nav", () => {
     const PDFView = document.getElementById("pdfView")
     const fileSlug = document.getElementById("fileData")?.innerText
+    PDFViewerApplicationOptions.set("defaultUrl", "/English/Concepts/Values-and-Attitudes_asset.pdf")
+    if (PDFView?.classList.contains("hidden")) return
+
     //console.log(PDFView)
     let URL = window.location
     //console.log(URL.origin)
@@ -35,11 +40,27 @@ document.addEventListener("nav", () => {
     //let f = URL.split("/")[0]
     //console.log(f)
 })
-
+ */
 
 /* document.addEventListener("nav", () => {
     const a = document.querySelector(".graph")
     if (a?.innerHTML) {
         a.innerHTML = ""
     }
+}) */
+
+
+/* document.addEventListener("nav", () => {
+    let url = document.getElementById("fileData")?.innerText
+    //url = "/English/Concepts/Values-and-Attitudes_asset.pdf"
+    //pdfjsLib.getDocument(url)
+    pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+        'pdfjs-dist/build/pdf.worker.min.js',
+        import.meta.url,
+      ).toString();
+
+
+
+    return
+
 }) */

@@ -14,7 +14,7 @@ import {
   slugifyFilePath,
 } from "../../util/path"
 import { defaultContentPageLayout, defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
-import { ArticleTitle, Backlinks, Darkmode, DesktopOnly, ExcalidrawComponent, Explorer, Graph, MobileOnly, PDFComponent, PageTitle, TagContent } from "../../components"
+import { ArticleTitle, Backlinks, Darkmode, DesktopOnly, ExcalidrawComponent, Explorer, Graph, MobileOnly, PDFComponent, PageTitle, Spacer, TagContent } from "../../components"
 import { glob } from "../../util/glob"
 
 export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
@@ -24,8 +24,7 @@ export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
     left: [PageTitle(), Darkmode(), DesktopOnly(Explorer())],
     right: [],
     pageBody: PDFComponent(),
-    ...userOpts,
-    //footer: Backlinks()
+    footer: Spacer()
   }
 
   const { head: Head, header, beforeBody, pageBody, left, right, footer: Footer } = opts
@@ -41,6 +40,27 @@ export const PDFPage: QuartzEmitterPlugin<FullPageLayout> = (userOpts) => {
       const cfg = ctx.cfg.configuration
       const argv = ctx.argv
       let fps: FilePath[] = []
+      resources.js.push({
+        contentType: "external",
+        src: "/static/PDFViewerJS/pdf.js", //* https://mozilla.github.io/pdf.js/build/pdf.js
+        loadTime: "afterDOMReady",
+        spaPreserve: false,
+      },
+      {
+        contentType: "external",
+        src: "/static/PDFViewerJS/pdf.worker.js", //* https://unpkg.com/pdfjs-dist@3.10.111/web/pdf_viewer.js
+        loadTime: "afterDOMReady",
+        spaPreserve: false,
+      },
+      {
+        contentType: "external",
+        src: "/static/PDFViewerJS/viewer.js",
+        loadTime: "afterDOMReady",
+        spaPreserve: false,
+      },
+      )
+      //resources.css.push("/static/PDFViewerJS/viewer1.css")
+
       const allFiles = content.map((c) => {
         console.log(c)
         return (c[1].data)

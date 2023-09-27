@@ -17,8 +17,12 @@ import { createRef } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import Backlinks from "./Backlinks";
 
-function ExcalidrawComponent({ fileData }: QuartzComponentProps) {
-    
+function ExcalidrawComponent({ fileData, externalResources }: QuartzComponentProps) {
+    externalResources.js.push({
+        src: "https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.development.js",
+        contentType: "external",
+        loadTime: "afterDOMReady",
+      })
 /*     let fileText: string | null = null
     if (fileData.text) {
         fileText = fileData.text

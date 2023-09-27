@@ -5,7 +5,8 @@ import { BuildCtx } from "../util/ctx"
 export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
   const staticResources: StaticResources = {
     css: [],
-    js: [{
+    js: [],
+/*     {
       src: 'https://unpkg.com/@excalidraw/excalidraw/dist/excalidraw.development.js',
       contentType: "external",
       loadTime: "beforeDOMReady",
@@ -17,7 +18,7 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
       contentType: "external",
       loadTime: "afterDOMReady",
       moduleType: "module",
-    }
+    } */
 /*     {
       src: 'https://unpkg.com/react@18.2.0/umd/react.development.js',
       contentType: "external",
@@ -32,9 +33,7 @@ export function getStaticResourcesFromPlugins(ctx: BuildCtx) {
       moduleType: "module",
       spaPreserve: true
     }, */
-  
-  
-  ],
+
   }
 
   for (const transformer of ctx.cfg.plugins.transformers) {

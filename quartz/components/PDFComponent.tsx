@@ -14,25 +14,1177 @@ import styles from "./styles/PDFComponent.scss"
 import * as fs from 'fs';
 import { Fragment } from "preact/jsx-runtime";
 import pkg from "@excalidraw/excalidraw";
-import { createRef } from "preact";
+import { createRef, h } from "preact";
 import { useEffect, useState } from "preact/hooks";
 import Backlinks from "./Backlinks";
+import { render } from "preact-render-to-string";
 
-function PDFComponent({ tree, fileData }: QuartzComponentProps) {
+function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProps) {
+            externalResources.css.push("/static/PDFViewerJS/viewer.css")
+            
             let slug = fileData.slug?.split(".")
+            fileData
             if (!slug) return(<div>No PDF Found</div>)
             let seperated = slug[0] + "_asset"
             let newSlug = [seperated, slug[1]].join(".")
             console.log(` New Slug: ${newSlug}`)
-
-            return <article>
+            if (true <= false) {
+            return(<article>
                 <p id="fileData" style="display: none">{newSlug}</p>
                 <p id="styles" style="display: none">{styles}</p>
-                <iframe id="pdfView" class="pdfPage" src={`${newSlug}`}></iframe>
+                <div class="top-bar">
+                      <button class="btn" id="prev-page">
+                        <i class="fas fa-arrow-circle-left"></i> Prev Page
+                      </button>
+                      <button class="btn" id="next-page">
+                        Next Page <i class="fas fa-arrow-circle-right"></i>
+                      </button>
+                      <span class="page-info">
+                        Page <span id="page-num"></span> of <span id="page-count"></span>
+                      </span>
+                </div>
+                <canvas id="pdf-render"></canvas>
+                <iframe id="pdfView hidden" class="pdfPage" src={`${newSlug}`}></iframe>
             </article>
+            )} else {
+                return(
+                    <>
+  <p id="fileData" style="display: none">{`/${newSlug}`}</p>
+  <div id="outerContainer">
+    <div id="sidebarContainer">
+      <div id="toolbarSidebar">
+        <div id="toolbarSidebarLeft">
+          <div
+            id="sidebarViewButtons"
+            className="splitToolbarButton toggled"
+            role="radiogroup"
+          >
+            <button
+              id="viewThumbnail"
+              className="toolbarButton toggled"
+              title="Show Thumbnails"
+              tabIndex={2}
+              data-l10n-id="thumbs"
+              role="radio"
+              aria-checked="true"
+              aria-controls="thumbnailView"
+            >
+              <span data-l10n-id="thumbs_label">Thumbnails</span>
+            </button>
+            <button
+              id="viewOutline"
+              className="toolbarButton"
+              title="Show Document Outline (double-click to expand/collapse all items)"
+              tabIndex={3}
+              data-l10n-id="document_outline"
+              role="radio"
+              aria-checked="false"
+              aria-controls="outlineView"
+            >
+              <span data-l10n-id="document_outline_label">
+                Document Outline
+              </span>
+            </button>
+            <button
+              id="viewAttachments"
+              className="toolbarButton"
+              title="Show Attachments"
+              tabIndex={4}
+              data-l10n-id="attachments"
+              role="radio"
+              aria-checked="false"
+              aria-controls="attachmentsView"
+            >
+              <span data-l10n-id="attachments_label">Attachments</span>
+            </button>
+            <button
+              id="viewLayers"
+              className="toolbarButton"
+              title="Show Layers (double-click to reset all layers to the default state)"
+              tabIndex={5}
+              data-l10n-id="layers"
+              role="radio"
+              aria-checked="false"
+              aria-controls="layersView"
+            >
+              <span data-l10n-id="layers_label">Layers</span>
+            </button>
+          </div>
+        </div>
+        <div id="toolbarSidebarRight">
+          <div id="outlineOptionsContainer" className="hidden">
+            <div className="verticalToolbarSeparator" />
+            <button
+              id="currentOutlineItem"
+              className="toolbarButton"
+              disabled="disabled"
+              title="Find Current Outline Item"
+              tabIndex={6}
+              data-l10n-id="current_outline_item"
+            >
+              <span data-l10n-id="current_outline_item_label">
+                Current Outline Item
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div id="sidebarContent">
+        <div id="thumbnailView"></div>
+        <div id="outlineView" className="hidden"></div>
+        <div id="attachmentsView" className="hidden"></div>
+        <div id="layersView" className="hidden"></div>
+      </div>
+      <div id="sidebarResizer" />
+    </div>{" "}
+    {/* sidebarContainer */}
+    <div id="mainContainer">
+      <div className="pdf-findbar hidden doorHanger" id="findbar">
+        
+        
+        <div className="pdf-search-container" id="findbarInputContainer">
+          
+          <div class="search-input">
+            <input
+              id="findInput"
+              className=""
+              type="search"
+              title="Find"
+              placeholder="Search...fgff"
+              tabIndex={91}
+              data-l10n-id="find_input"
+              aria-invalid="false"
+            />
+                        <div
+              id="findPrevious"
+              className="clickable-icon"
+              title="Find the previous occurrence of the phrase"
+              tabIndex={92}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-dash"><path d="M9 19h6"/><path d="M9 15v-3H5l7-7 7 7h-4v3H9z"/></svg>
+            </div>
+            <div
+              id="findNext"
+              className="clickable-icon"
+              title="Find the next occurrence of the phrase"
+              tabIndex={93}
+              data-l10n-id="find_next"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-down-dash"><path d="M15 5H9"/><path d="M15 9v3h4l-7 7-7-7h4V9h6z"/></svg>            
+            </div>
+          </div>
+{/*         <div id="findbarMessageContainer" aria-live="polite">
+          <span id="findResultsCount" className="toolbarLabel" />
+          <span id="findMsg" className="toolbarLabel" />
+        </div> */}
+
+        </div>
+        <div id="findbarOptionsOneContainer">
+
+        <div className="setting-item">
+          <div className="setting-info">
+          <label
+            htmlFor="findMatchCase"
+            className="setting-name"
+            data-l10n-id="find_match_case_label"
+          >
+            Match Case
+          </label>
+          </div>
+          <div className="setting-control">
+            <div className="checkbox-container">
+              <input
+                  type="checkbox"
+                  id="findMatchCase"
+                  className="toolbarField"
+                  tabIndex={97}
+              />
+            </div>
+          </div>
+        </div>
+        </div>
+        <div id="findbarOptionsTwoContainer">
+          <div className="setting-item">
+            <div className="setting-info">
+              <label htmlFor="findHighlightAll" className="setting-name">
+                Highlight All
+              </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+              <input
+                type="checkbox"
+                id="findHighlightAll"
+                className=""
+                tabIndex={95}
+              />
+              </div>
+            </div>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <label htmlFor="findMatchDiacritics" className="setting-name">
+              Match Diacritics
+              </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="findMatchDiacritics"
+                  className="toolbarField"
+                  tabIndex={96}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+            <label htmlFor="findEntireWord" className="setting-name">
+            Whole Words
+          </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="findEntireWord"
+                  className="toolbarField"
+                  tabIndex={97}
+                />
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>{" "}
+      {/* findbar */}
+      <div
+        className="editorParamsToolbar hidden doorHangerRight"
+        id="editorFreeTextParamsToolbar"
+      >
+        <div className="editorParamsToolbarContainer">
+          <div className="editorParamsSetter">
+            <label
+              htmlFor="editorFreeTextColor"
+              className="editorParamsLabel"
+              data-l10n-id="editor_free_text_color"
+            >
+              Color
+            </label>
+            <input
+              type="color"
+              id="editorFreeTextColor"
+              className="editorParamsColor"
+              tabIndex={100}
+            />
+          </div>
+          <div className="editorParamsSetter">
+            <label
+              htmlFor="editorFreeTextFontSize"
+              className="editorParamsLabel"
+              data-l10n-id="editor_free_text_size"
+            >
+              Size
+            </label>
+            <input
+              type="range"
+              id="editorFreeTextFontSize"
+              className="editorParamsSlider"
+              defaultValue={10}
+              min={5}
+              max={100}
+              step={1}
+              tabIndex={101}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="editorParamsToolbar hidden doorHangerRight"
+        id="editorInkParamsToolbar"
+      >
+        <div className="editorParamsToolbarContainer">
+          <div className="editorParamsSetter">
+            <label
+              htmlFor="editorInkColor"
+              className="editorParamsLabel"
+              data-l10n-id="editor_ink_color"
+            >
+              Color
+            </label>
+            <input
+              type="color"
+              id="editorInkColor"
+              className="editorParamsColor"
+              tabIndex={102}
+            />
+          </div>
+          <div className="editorParamsSetter">
+            <label
+              htmlFor="editorInkThickness"
+              className="editorParamsLabel"
+              data-l10n-id="editor_ink_thickness"
+            >
+              Thickness
+            </label>
+            <input
+              type="range"
+              id="editorInkThickness"
+              className="editorParamsSlider"
+              defaultValue={1}
+              min={1}
+              max={20}
+              step={1}
+              tabIndex={103}
+            />``
+          </div>
+          <div className="editorParamsSetter">
+            <label
+              htmlFor="editorInkOpacity"
+              className="editorParamsLabel"
+              data-l10n-id="editor_ink_opacity"
+            >
+              Opacity
+            </label>
+            <input
+              type="range"
+              id="editorInkOpacity"
+              className="editorParamsSlider"
+              defaultValue={100}
+              min={1}
+              max={100}
+              step={1}
+              tabIndex={104}
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className="editorParamsToolbar hidden doorHangerRight"
+        id="editorStampParamsToolbar"
+      >
+        <div className="editorParamsToolbarContainer">
+          <button
+            id="editorStampAddImage"
+            className="secondaryToolbarButton"
+            title="Add image"
+            tabIndex={105}
+            data-l10n-id="editor_stamp_add_image"
+          >
+            <span data-l10n-id="editor_stamp_add_image_label">Add image</span>
+          </button>
+        </div>
+      </div>
+      <div
+        id="secondaryToolbar"
+        className="secondaryToolbar hidden doorHangerRight"
+      >
+        <div id="secondaryToolbarButtonContainer">
+          <button
+            id="secondaryOpenFile"
+            className="secondaryToolbarButton visibleLargeView"
+            title="Open File"
+            tabIndex={51}
+            data-l10n-id="open_file"
+          >
+            <span data-l10n-id="open_file_label">Open</span>
+          </button>
+          <button
+            id="secondaryPrint"
+            className="secondaryToolbarButton visibleMediumView"
+            title="Print"
+            tabIndex={52}
+            data-l10n-id="print"
+          >
+            <span data-l10n-id="print_label">Print</span>
+          </button>
+          <button
+            id="secondaryDownload"
+            className="secondaryToolbarButton visibleMediumView"
+            title="Save"
+            tabIndex={53}
+            data-l10n-id="save"
+          >
+            <span data-l10n-id="save_label">Save</span>
+          </button>
+          <div className="horizontalToolbarSeparator visibleLargeView" />
+          <button
+            id="presentationMode"
+            className="secondaryToolbarButton"
+            title="Switch to Presentation Mode"
+            tabIndex={54}
+            data-l10n-id="presentation_mode"
+          >
+            <span data-l10n-id="presentation_mode_label">
+              Presentation Mode
+            </span>
+          </button>
+          <a
+            href="#"
+            id="viewBookmark"
+            className="secondaryToolbarButton"
+            title="Current Page (View URL from Current Page)"
+            tabIndex={55}
+            data-l10n-id="bookmark1"
+          >
+            <span data-l10n-id="bookmark1_label">Current Page</span>
+          </a>
+          <div
+            id="viewBookmarkSeparator"
+            className="horizontalToolbarSeparator"
+          />
+          <button
+            id="firstPage"
+            className="secondaryToolbarButton"
+            title="Go to First Page"
+            tabIndex={56}
+            data-l10n-id="first_page"
+          >
+            <span data-l10n-id="first_page_label">Go to First Page</span>
+          </button>
+          <button
+            id="lastPage"
+            className="secondaryToolbarButton"
+            title="Go to Last Page"
+            tabIndex={57}
+            data-l10n-id="last_page"
+          >
+            <span data-l10n-id="last_page_label">Go to Last Page</span>
+          </button>
+          <div className="horizontalToolbarSeparator" />
+          <button
+            id="pageRotateCw"
+            className="secondaryToolbarButton"
+            title="Rotate Clockwise"
+            tabIndex={58}
+            data-l10n-id="page_rotate_cw"
+          >
+            <span data-l10n-id="page_rotate_cw_label">Rotate Clockwise</span>
+          </button>
+          <button
+            id="pageRotateCcw"
+            className="secondaryToolbarButton"
+            title="Rotate Counterclockwise"
+            tabIndex={59}
+            data-l10n-id="page_rotate_ccw"
+          >
+            <span data-l10n-id="page_rotate_ccw_label">
+              Rotate Counterclockwise
+            </span>
+          </button>
+          <div className="horizontalToolbarSeparator" />
+          <div id="cursorToolButtons" role="radiogroup">
+            <button
+              id="cursorSelectTool"
+              className="secondaryToolbarButton toggled"
+              title="Enable Text Selection Tool"
+              tabIndex={60}
+              data-l10n-id="cursor_text_select_tool"
+              role="radio"
+              aria-checked="true"
+            >
+              <span data-l10n-id="cursor_text_select_tool_label">
+                Text Selection Tool
+              </span>
+            </button>
+            <button
+              id="cursorHandTool"
+              className="secondaryToolbarButton"
+              title="Enable Hand Tool"
+              tabIndex={61}
+              data-l10n-id="cursor_hand_tool"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="cursor_hand_tool_label">Hand Tool</span>
+            </button>
+          </div>
+          <div className="horizontalToolbarSeparator" />
+          <div id="scrollModeButtons" role="radiogroup">
+            <button
+              id="scrollPage"
+              className="secondaryToolbarButton"
+              title="Use Page Scrolling"
+              tabIndex={62}
+              data-l10n-id="scroll_page"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="scroll_page_label">Page Scrolling</span>
+            </button>
+            <button
+              id="scrollVertical"
+              className="secondaryToolbarButton toggled"
+              title="Use Vertical Scrolling"
+              tabIndex={63}
+              data-l10n-id="scroll_vertical"
+              role="radio"
+              aria-checked="true"
+            >
+              <span data-l10n-id="scroll_vertical_label">
+                Vertical Scrolling
+              </span>
+            </button>
+            <button
+              id="scrollHorizontal"
+              className="secondaryToolbarButton"
+              title="Use Horizontal Scrolling"
+              tabIndex={64}
+              data-l10n-id="scroll_horizontal"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="scroll_horizontal_label">
+                Horizontal Scrolling
+              </span>
+            </button>
+            <button
+              id="scrollWrapped"
+              className="secondaryToolbarButton"
+              title="Use Wrapped Scrolling"
+              tabIndex={65}
+              data-l10n-id="scroll_wrapped"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="scroll_wrapped_label">Wrapped Scrolling</span>
+            </button>
+          </div>
+          <div className="horizontalToolbarSeparator" />
+          <div id="spreadModeButtons" role="radiogroup">
+            <button
+              id="spreadNone"
+              className="secondaryToolbarButton toggled"
+              title="Do not join page spreads"
+              tabIndex={66}
+              data-l10n-id="spread_none"
+              role="radio"
+              aria-checked="true"
+            >
+              <span data-l10n-id="spread_none_label">No Spreads</span>
+            </button>
+            <button
+              id="spreadOdd"
+              className="secondaryToolbarButton"
+              title="Join page spreads starting with odd-numbered pages"
+              tabIndex={67}
+              data-l10n-id="spread_odd"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="spread_odd_label">Odd Spreads</span>
+            </button>
+            <button
+              id="spreadEven"
+              className="secondaryToolbarButton"
+              title="Join page spreads starting with even-numbered pages"
+              tabIndex={68}
+              data-l10n-id="spread_even"
+              role="radio"
+              aria-checked="false"
+            >
+              <span data-l10n-id="spread_even_label">Even Spreads</span>
+            </button>
+          </div>
+          <div className="horizontalToolbarSeparator" />
+          <button
+            id="documentProperties"
+            className="secondaryToolbarButton"
+            title="Document Properties…"
+            tabIndex={69}
+            data-l10n-id="document_properties"
+            aria-controls="documentPropertiesDialog"
+          >
+            <span data-l10n-id="document_properties_label">
+              Document Properties…
+            </span>
+          </button>
+        </div>
+      </div>{" "}
+      {/* secondaryToolbar */}
+      <div className="toolbar">
+        <div id="toolbarContainer">
+          <div id="toolbarViewer">
+            <div id="/* toolbarViewerLeft */" className="pdf-toolbar-left">
+              <button
+                id="sidebarToggle"
+                className="toolbarButton"
+                title="Toggle Sidebar"
+                tabIndex={11}
+                data-l10n-id="toggle_sidebar"
+                aria-expanded="false"
+                aria-controls="sidebarContainer"
+              >
+                <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
+              </button>
+              <div className="toolbarButtonSpacer" />
+              <div
+                id="viewFind"
+                className="clickable-icon"
+                title="Search..."
+                tabIndex={12}
+                aria-expanded="false"
+                aria-controls="findbar"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></svg>
+              </div>
+                <div title="Previous Page"
+                  className="clickable-icon hidden"
+                  id="previous"
+                  tabIndex={13}
+                >
+                </div>
+                <div title="Next Page"
+                  className="clickable-icon hidden"
+                  id="next"
+                  tabIndex={14}
+                > 
+                </div>
+
+                <div title="Zoom Out"
+                  id="zoomOut"
+                  className="clickable-icon"
+                  tabIndex={21}
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-zoom-out"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                </div>
+                <div className="splitToolbarButtonSeparator" />
+                <div
+                  id="zoomIn"
+                  className="clickable-icon"
+                  title="Zoom In"
+                  tabIndex={22}
+                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-zoom-in"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                </div>
+              <input
+                type="number"
+                id="pageNumber"
+                className="toolbarField"
+                title="Page"
+                defaultValue={1}
+                min={1}
+                tabIndex={15}
+                data-l10n-id="page"
+                autoComplete="off"
+              />
+              <span id="numPages" className="toolbarLabel" />
+            </div>
+            <div id="toolbarViewerRight">
+              <button
+                id="openFile"
+                className="toolbarButton hiddenLargeView"
+                title="Open File"
+                tabIndex={31}
+                data-l10n-id="open_file"
+              >
+                <span data-l10n-id="open_file_label">Open</span>
+              </button>
+              <button
+                id="print"
+                className="toolbarButton hiddenMediumView"
+                title="Print"
+                tabIndex={32}
+                data-l10n-id="print"
+              >
+                <span data-l10n-id="print_label">Print</span>
+              </button>
+              <button
+                id="download"
+                className="toolbarButton hiddenMediumView"
+                title="Save"
+                tabIndex={33}
+                data-l10n-id="save"
+              >
+                <span data-l10n-id="save_label">Save</span>
+              </button>
+{/*               <div className="verticalToolbarSeparator hiddenMediumView" />
+ */}              <div
+                id="editorModeButtons"
+                className="splitToolbarButton toggled"
+                role="radiogroup"
+              >
+                <button
+                  id="editorFreeText"
+                  className="toolbarButton"
+                  disabled="disabled"
+                  title="Text"
+                  role="radio"
+                  aria-checked="false"
+                  aria-controls="editorFreeTextParamsToolbar"
+                  tabIndex={34}
+                  data-l10n-id="editor_free_text2"
+                >
+                  <span data-l10n-id="editor_free_text2_label">Text</span>
+                </button>
+                <button
+                  id="editorInk"
+                  className="toolbarButton"
+                  disabled="disabled"
+                  title="Draw"
+                  role="radio"
+                  aria-checked="false"
+                  aria-controls="editorInkParamsToolbar"
+                  tabIndex={35}
+                  data-l10n-id="editor_ink2"
+                >
+                  <span data-l10n-id="editor_ink2_label">Draw</span>
+                </button>
+                <button
+                  id="editorStamp"
+                  className="toolbarButton hidden"
+                  disabled="disabled"
+                  title="Add or edit images"
+                  role="radio"
+                  aria-checked="false"
+                  aria-controls="editorStampParamsToolbar"
+                  tabIndex={36}
+                  data-l10n-id="editor_stamp1"
+                >
+                  <span data-l10n-id="editor_stamp1_label">
+                    Add or edit images
+                  </span>
+                </button>
+              </div>
+{/*               <div
+                id="editorModeSeparator"
+                className="verticalToolbarSeparator"
+              /> */}
+              <button
+                id="secondaryToolbarToggle"
+                className="toolbarButton"
+                title="Tools"
+                tabIndex={48}
+                data-l10n-id="tools"
+                aria-expanded="false"
+                aria-controls="secondaryToolbar"
+              >
+                <span data-l10n-id="tools_label">Tools</span>
+              </button>
+            </div>
+            <div id="toolbarViewerMiddle">
+
+              <span id="scaleSelectContainer" className="dropdownToolbarButton">
+                <select
+                  id="scaleSelect"
+                  title="Zoom"
+                  tabIndex={23}
+                  data-l10n-id="zoom"
+                >
+                  <option
+                    id="pageAutoOption"
+                    title=""
+                    value="auto"
+                    selected="selected"
+                    data-l10n-id="page_scale_auto"
+                  >
+                    Automatic Zoom
+                  </option>
+                  <option
+                    id="pageActualOption"
+                    title=""
+                    value="page-actual"
+                    data-l10n-id="page_scale_actual"
+                  >
+                    Actual Size
+                  </option>
+                  <option
+                    id="pageFitOption"
+                    title=""
+                    value="page-fit"
+                    data-l10n-id="page_scale_fit"
+                  >
+                    Page Fit
+                  </option>
+                  <option
+                    id="pageWidthOption"
+                    title=""
+                    value="page-width"
+                    data-l10n-id="page_scale_width"
+                  >
+                    Page Width
+                  </option>
+                  <option
+                    id="customScaleOption"
+                    title=""
+                    value="custom"
+                    disabled="disabled"
+                    hidden="true"
+                  />
+                  <option
+                    title=""
+                    value="0.5"
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 50 }'
+                  >
+                    50%
+                  </option>
+                  <option
+                    title=""
+                    value="0.75"
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 75 }'
+                  >
+                    75%
+                  </option>
+                  <option
+                    title=""
+                    value={1}
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 100 }'
+                  >
+                    100%
+                  </option>
+                  <option
+                    title=""
+                    value="1.25"
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 125 }'
+                  >
+                    125%
+                  </option>
+                  <option
+                    title=""
+                    value="1.5"
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 150 }'
+                  >
+                    150%
+                  </option>
+                  <option
+                    title=""
+                    value={2}
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 200 }'
+                  >
+                    200%
+                  </option>
+                  <option
+                    title=""
+                    value={3}
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 300 }'
+                  >
+                    300%
+                  </option>
+                  <option
+                    title=""
+                    value={4}
+                    data-l10n-id="page_scale_percent"
+                    data-l10n-args='{ "scale": 400 }'
+                  >
+                    400%
+                  </option>
+                </select>
+              </span>
+            </div>
+          </div>
+          <div id="loadingBar">
+            <div className="progress">
+              <p>Reload the page</p>
+              <div className="glimmer"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="viewerContainer" tabIndex={0}>
+        <div id="viewer" className="pdfViewer" />
+      </div>
+    </div>{" "}
+    {/* mainContainer */}
+    <div id="dialogContainer">
+      <dialog id="passwordDialog">
+        <div className="row">
+          <label
+            htmlFor="password"
+            id="passwordText"
+            data-l10n-id="password_label"
+          >
+            Enter the password to open this PDF file:
+          </label>
+        </div>
+        <div className="row">
+          <input type="password" id="password" className="toolbarField" />
+        </div>
+        <div className="buttonRow">
+          <button id="passwordCancel" className="dialogButton">
+            <span data-l10n-id="password_cancel">Cancel</span>
+          </button>
+          <button id="passwordSubmit" className="dialogButton">
+            <span data-l10n-id="password_ok">OK</span>
+          </button>
+        </div>
+      </dialog>
+      <dialog id="documentPropertiesDialog">
+        <div className="row">
+          <span id="fileNameLabel" data-l10n-id="document_properties_file_name">
+            File name:
+          </span>
+          <p id="fileNameField" aria-labelledby="fileNameLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="fileSizeLabel" data-l10n-id="document_properties_file_size">
+            File size:
+          </span>
+          <p id="fileSizeField" aria-labelledby="fileSizeLabel">
+            -
+          </p>
+        </div>
+        <div className="separator" />
+        <div className="row">
+          <span id="titleLabel" data-l10n-id="document_properties_title">
+            Title:
+          </span>
+          <p id="titleField" aria-labelledby="titleLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="authorLabel" data-l10n-id="document_properties_author">
+            Author:
+          </span>
+          <p id="authorField" aria-labelledby="authorLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="subjectLabel" data-l10n-id="document_properties_subject">
+            Subject:
+          </span>
+          <p id="subjectField" aria-labelledby="subjectLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="keywordsLabel" data-l10n-id="document_properties_keywords">
+            Keywords:
+          </span>
+          <p id="keywordsField" aria-labelledby="keywordsLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span
+            id="creationDateLabel"
+            data-l10n-id="document_properties_creation_date"
+          >
+            Creation Date:
+          </span>
+          <p id="creationDateField" aria-labelledby="creationDateLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span
+            id="modificationDateLabel"
+            data-l10n-id="document_properties_modification_date"
+          >
+            Modification Date:
+          </span>
+          <p id="modificationDateField" aria-labelledby="modificationDateLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="creatorLabel" data-l10n-id="document_properties_creator">
+            Creator:
+          </span>
+          <p id="creatorField" aria-labelledby="creatorLabel">
+            -
+          </p>
+        </div>
+        <div className="separator" />
+        <div className="row">
+          <span id="producerLabel" data-l10n-id="document_properties_producer">
+            PDF Producer:
+          </span>
+          <p id="producerField" aria-labelledby="producerLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="versionLabel" data-l10n-id="document_properties_version">
+            PDF Version:
+          </span>
+          <p id="versionField" aria-labelledby="versionLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span
+            id="pageCountLabel"
+            data-l10n-id="document_properties_page_count"
+          >
+            Page Count:
+          </span>
+          <p id="pageCountField" aria-labelledby="pageCountLabel">
+            -
+          </p>
+        </div>
+        <div className="row">
+          <span id="pageSizeLabel" data-l10n-id="document_properties_page_size">
+            Page Size:
+          </span>
+          <p id="pageSizeField" aria-labelledby="pageSizeLabel">
+            -
+          </p>
+        </div>
+        <div className="separator" />
+        <div className="row">
+          <span
+            id="linearizedLabel"
+            data-l10n-id="document_properties_linearized"
+          >
+            Fast Web View:
+          </span>
+          <p id="linearizedField" aria-labelledby="linearizedLabel">
+            -
+          </p>
+        </div>
+        <div className="buttonRow">
+          <button id="documentPropertiesClose" className="dialogButton">
+            <span data-l10n-id="document_properties_close">Close</span>
+          </button>
+        </div>
+      </dialog>
+      <dialog
+        id="altTextDialog"
+        aria-labelledby="dialogLabel"
+        aria-describedby="dialogDescription"
+      >
+        <div id="altTextContainer">
+          <div id="overallDescription">
+            <span
+              id="dialogLabel"
+              data-l10n-id="editor_alt_text_dialog_label"
+              className="title"
+            >
+              Choose an option
+            </span>
+            <span
+              id="dialogDescription"
+              data-l10n-id="editor_alt_text_dialog_description"
+            >
+              Alt text (alternative text) helps when people can’t see the image
+              or when it doesn’t load.
+            </span>
+          </div>
+          <div id="addDescription">
+            <div className="radio">
+              <div className="radioButton">
+                <input
+                  type="radio"
+                  id="descriptionButton"
+                  name="altTextOption"
+                  tabIndex={0}
+                  aria-describedby="descriptionAreaLabel"
+                  defaultChecked=""
+                />
+                <label
+                  htmlFor="descriptionButton"
+                  data-l10n-id="editor_alt_text_add_description_label"
+                >
+                  Add a description
+                </label>
+              </div>
+              <div className="radioLabel">
+                <span
+                  id="descriptionAreaLabel"
+                  data-l10n-id="editor_alt_text_add_description_description"
+                >
+                  Aim for 1-2 sentences that describe the subject, setting, or
+                  actions.
+                </span>
+              </div>
+            </div>
+            <div className="descriptionArea">
+              <textarea
+                id="descriptionTextarea"
+                placeholder="For example, “A young man sits down at a table to eat a meal”"
+                aria-labelledby="descriptionAreaLabel"
+                data-l10n-id="editor_alt_text_textarea"
+                tabIndex={0}
+                defaultValue={""}
+              />
+            </div>
+          </div>
+          <div id="markAsDecorative">
+            <div className="radio">
+              <div className="radioButton">
+                <input
+                  type="radio"
+                  id="decorativeButton"
+                  name="altTextOption"
+                  aria-describedby="decorativeLabel"
+                />
+                <label
+                  htmlFor="decorativeButton"
+                  data-l10n-id="editor_alt_text_mark_decorative_label"
+                >
+                  Mark as decorative
+                </label>
+              </div>
+              <div className="radioLabel">
+                <span
+                  id="decorativeLabel"
+                  data-l10n-id="editor_alt_text_mark_decorative_description"
+                >
+                  This is used for ornamental images, like borders or
+                  watermarks.
+                </span>
+              </div>
+            </div>
+          </div>
+          <div id="buttons">
+            <button id="altTextCancel" tabIndex={0}>
+              <span data-l10n-id="editor_alt_text_cancel_button">Cancel</span>
+            </button>
+            <button id="altTextSave" tabIndex={0}>
+              <span data-l10n-id="editor_alt_text_save_button">Save</span>
+            </button>
+          </div>
+        </div>
+      </dialog>
+      <dialog id="printServiceDialog" style={{ minWidth: 200 }}>
+        <div className="row">
+          <span data-l10n-id="print_progress_message">
+            Preparing document for printing…
+          </span>
+        </div>
+        <div className="row">
+          <progress value={0} max={100} />
+          <span
+            data-l10n-id="print_progress_percent"
+            data-l10n-args='{ "progress": 0 }'
+            className="relative-progress"
+          >
+            0%
+          </span>
+        </div>
+        <div className="buttonRow">
+          <button id="printCancel" className="dialogButton">
+            <span data-l10n-id="print_progress_close">Cancel</span>
+          </button>
+        </div>
+      </dialog>
+    </div>{" "}
+    {/* dialogContainer */}
+  </div>{" "}
+  {/* outerContainer */}
+  <div id="printContainer" />
+  <input type="file" id="fileInput" className="hidden" />
+</>
+
+                )
+            }
         }
 PDFComponent.css = styles
-PDFComponent.afterDOMLoaded = script
+PDFComponent.beforeDOMLoaded = script
 export default (() => PDFComponent) satisfies QuartzComponentConstructor
 
 

@@ -1,3 +1,5 @@
+@use "./variables.scss" as *;
+
 // put your custom CSS here!
 ::view-transition-old(transition_title) {
     /* Prevent the default animation,
@@ -28,6 +30,9 @@
     color: white !important;
 } */
 
+.hidden {
+  display: none;
+}
 
 .left, .right {
     overflow-y: auto !important;
@@ -58,3 +63,131 @@
   .toolbar {
       background-color: red;
   }
+
+.setting-item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.75em 0;
+    border-top: 1px solid var(--background-modifier-border);
+
+    & > setting-info {
+      flex: 1 1 auto;
+
+      & > setting-name {
+       color: var(--text-normal);
+       font-size: var(--font-ui-medium);
+       line-height: var(--line-height-tight);
+      }
+    }
+    & > setting-control {
+      flex: 1 1 auto;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: var(--size-4-2);
+    }
+
+
+}
+
+  
+.clickable-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: $size-2-2 $size-2-3;
+    cursor: $cursor-icon;
+    border-radius: $radius-s;
+    opacity: 0.85;
+    transition: opacity 0.15s ease-in-out;
+    height: auto;
+  
+    &:hover {
+      background-color: var(--highlight);
+      opacity: 1;
+    }
+  
+    & svg {
+      width: $clickable-icon-size;
+      height: $clickable-icon-size;
+      stroke-width: $clickable-icon-stroke;
+    }
+  }
+
+input[type='search'] {
+  -webkit-app-region: no-drag;
+  background: $background-modifier-form-field;
+  border: $input-border-width solid $background-modifier-border;
+  color: $text-normal;
+  font-family: inherit;
+  padding: $size-4-1 $size-4-2;
+  font-size: $font-ui-small;
+  border-radius: $input-radius;
+  outline: none;
+  
+  &:focus {
+    box-shadow: 0 0 0 22px var(--background-modifier-border-focus);
+    border-color: var(--background-modifier-border-focus);
+    transition: box-shadow 0.15s ease-in-out, border 0.15s ease-in-out;
+  }
+}
+
+  
+  .checkbox-container {
+    -webkit-app-region: no-drag;
+    cursor: $cursor-icon;
+    background-color: var(--highlight);
+    border-radius: $toggle-radius;
+    display: inline-block;
+    flex-shrink: 0;
+    height: calc($toggle-thumb-height + $toggle-border-width * 2);
+    position: relative;
+    user-select: all;
+    width: $toggle-width;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.07), inset 0 0 1px rgba(0, 0, 0, 0.21);
+    transition: box-shadow 0.15s ease-in-out, outline 0.15s ease-in-out, border 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    outline: 0 solid $background-modifier-border-focus;
+
+   & > input[type=checkbox] {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+  }
+
+  &:has(input[type=checkbox]:checked)::after {
+    transform: translate3d(calc($toggle-width - $toggle-thumb-width - $toggle-border-width), 0, 0);
+  }
+
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+    }
+
+    &::after {
+      pointer-events: none;
+      content: '';
+      display: block;
+      position: absolute;
+      background-color: $toggle-thumb-color;
+      width: $toggle-thumb-width;
+      height: $toggle-thumb-height;
+      margin: $toggle-border-width 0 0 0;
+      border-radius: $toggle-thumb-radius;
+      transition: transform 0.15s ease-in-out, width 0.1s ease-in-out, left 0.1s ease-in-out;
+      left: 0;
+      transform: translate3d($toggle-border-width, 0, 0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    }
+
+
+  }
+
