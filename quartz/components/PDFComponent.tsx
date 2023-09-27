@@ -139,99 +139,126 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
     </div>{" "}
     {/* sidebarContainer */}
     <div id="mainContainer">
-      <div className="findbar hidden doorHanger" id="findbar">
-        <div id="findbarInputContainer">
-          <input
-            id="findInput"
-            className="toolbarField"
-            title="Find"
-            placeholder="Find in document…"
-            tabIndex={91}
-            data-l10n-id="find_input"
-            aria-invalid="false"
-          />
-          <div className="splitToolbarButton">
-            <button
+      <div className="pdf-findbar hidden doorHanger" id="findbar">
+        
+        
+        <div className="pdf-search-container" id="findbarInputContainer">
+          
+          <div class="search-input">
+            <input
+              id="findInput"
+              className=""
+              type="search"
+              title="Find"
+              placeholder="Search...fgff"
+              tabIndex={91}
+              data-l10n-id="find_input"
+              aria-invalid="false"
+            />
+                        <div
               id="findPrevious"
-              className="toolbarButton"
+              className="clickable-icon"
               title="Find the previous occurrence of the phrase"
               tabIndex={92}
-              data-l10n-id="find_previous"
             >
-              <span data-l10n-id="find_previous_label">Previous</span>
-            </button>
-            <div className="splitToolbarButtonSeparator" />
-            <button
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up-dash"><path d="M9 19h6"/><path d="M9 15v-3H5l7-7 7 7h-4v3H9z"/></svg>
+            </div>
+            <div
               id="findNext"
-              className="toolbarButton"
+              className="clickable-icon"
               title="Find the next occurrence of the phrase"
               tabIndex={93}
               data-l10n-id="find_next"
             >
-              <span data-l10n-id="find_next_label">Next</span>
-            </button>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-down-dash"><path d="M15 5H9"/><path d="M15 9v3h4l-7 7-7-7h4V9h6z"/></svg>            
+            </div>
           </div>
+{/*         <div id="findbarMessageContainer" aria-live="polite">
+          <span id="findResultsCount" className="toolbarLabel" />
+          <span id="findMsg" className="toolbarLabel" />
+        </div> */}
+
         </div>
         <div id="findbarOptionsOneContainer">
-          <input
-            type="checkbox"
-            id="findHighlightAll"
-            className="toolbarField"
-            tabIndex={94}
-          />
-          <label
-            htmlFor="findHighlightAll"
-            className="toolbarLabel"
-            data-l10n-id="find_highlight"
-          >
-            Highlight All
-          </label>
-          <input
-            type="checkbox"
-            id="findMatchCase"
-            className="toolbarField"
-            tabIndex={95}
-          />
+
+        <div className="setting-item">
+          <div className="setting-info">
           <label
             htmlFor="findMatchCase"
-            className="toolbarLabel"
+            className="setting-name"
             data-l10n-id="find_match_case_label"
           >
             Match Case
           </label>
+          </div>
+          <div className="setting-control">
+            <div className="checkbox-container">
+              <input
+                  type="checkbox"
+                  id="findMatchCase"
+                  className="toolbarField"
+                  tabIndex={97}
+              />
+            </div>
+          </div>
+        </div>
         </div>
         <div id="findbarOptionsTwoContainer">
-          <input
-            type="checkbox"
-            id="findMatchDiacritics"
-            className="toolbarField"
-            tabIndex={96}
-          />
-          <label
-            htmlFor="findMatchDiacritics"
-            className="toolbarLabel"
-            data-l10n-id="find_match_diacritics_label"
-          >
-            Match Diacritics
-          </label>
-          <input
-            type="checkbox"
-            id="findEntireWord"
-            className="toolbarField"
-            tabIndex={97}
-          />
-          <label
-            htmlFor="findEntireWord"
-            className="toolbarLabel"
-            data-l10n-id="find_entire_word_label"
-          >
+          <div className="setting-item">
+            <div className="setting-info">
+              <label htmlFor="findHighlightAll" className="setting-name">
+                Highlight All
+              </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+              <input
+                type="checkbox"
+                id="findHighlightAll"
+                className=""
+                tabIndex={95}
+              />
+              </div>
+            </div>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+              <label htmlFor="findMatchDiacritics" className="setting-name">
+              Match Diacritics
+              </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="findMatchDiacritics"
+                  className="toolbarField"
+                  tabIndex={96}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="setting-item">
+            <div className="setting-info">
+            <label htmlFor="findEntireWord" className="setting-name">
             Whole Words
           </label>
+            </div>
+            <div className="setting-control">
+              <div className="checkbox-container">
+                <input
+                  type="checkbox"
+                  id="findEntireWord"
+                  className="toolbarField"
+                  tabIndex={97}
+                />
+              </div>
+            </div>
+          </div>
+
+
         </div>
-        <div id="findbarMessageContainer" aria-live="polite">
-          <span id="findResultsCount" className="toolbarLabel" />
-          <span id="findMsg" className="toolbarLabel" />
-        </div>
+
       </div>{" "}
       {/* findbar */}
       <div
@@ -312,7 +339,7 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
               max={20}
               step={1}
               tabIndex={103}
-            />
+            />``
           </div>
           <div className="editorParamsSetter">
             <label
@@ -581,7 +608,7 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
       <div className="toolbar">
         <div id="toolbarContainer">
           <div id="toolbarViewer">
-            <div id="toolbarViewerLeft">
+            <div id="/* toolbarViewerLeft */" className="pdf-toolbar-left">
               <button
                 id="sidebarToggle"
                 className="toolbarButton"
@@ -594,59 +621,45 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
                 <span data-l10n-id="toggle_sidebar_label">Toggle Sidebar</span>
               </button>
               <div className="toolbarButtonSpacer" />
-              <button
+              <div
                 id="viewFind"
-                className="toolbarButton"
-                title="Find in Document"
+                className="clickable-icon"
+                title="Search..."
                 tabIndex={12}
-                data-l10n-id="findbar"
                 aria-expanded="false"
                 aria-controls="findbar"
               >
-                <span data-l10n-id="findbar_label">Find</span>
-              </button>
-              <div className="splitToolbarButton hiddenSmallView">
-                <button
-                  className="toolbarButton"
-                  title="Previous Page"
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radar"><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34"/><path d="M4 6h.01"/><path d="M2.29 9.62A10 10 0 1 0 21.31 8.35"/><path d="M16.24 7.76A6 6 0 1 0 8.23 16.67"/><path d="M12 18h.01"/><path d="M17.99 11.66A6 6 0 0 1 15.77 16.67"/><circle cx="12" cy="12" r="2"/><path d="m13.41 10.59 5.66-5.66"/></svg>
+              </div>
+                <div title="Previous Page"
+                  className="clickable-icon hidden"
                   id="previous"
                   tabIndex={13}
-                  data-l10n-id="previous"
                 >
-                  <span data-l10n-id="previous_label">Previous</span>
-                </button>
-                <div className="splitToolbarButtonSeparator" />
-                <button
-                  className="toolbarButton"
-                  title="Next Page"
+                </div>
+                <div title="Next Page"
+                  className="clickable-icon hidden"
                   id="next"
                   tabIndex={14}
-                  data-l10n-id="next"
-                >
-                  <span data-l10n-id="next_label">Next</span>
-                </button>
-                <div className="splitToolbarButton">
-                <button
+                > 
+                </div>
+
+                <div title="Zoom Out"
                   id="zoomOut"
-                  className="toolbarButton"
-                  title="Zoom Out"
+                  className="clickable-icon"
                   tabIndex={21}
-                  data-l10n-id="zoom_out"
                 >
-                  <span data-l10n-id="zoom_out_label">Zoom Out</span>
-                </button>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-zoom-out"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                </div>
                 <div className="splitToolbarButtonSeparator" />
-                <button
+                <div
                   id="zoomIn"
-                  className="toolbarButton"
+                  className="clickable-icon"
                   title="Zoom In"
                   tabIndex={22}
-                  data-l10n-id="zoom_in"
                 >
-                  <span data-l10n-id="zoom_in_label">Zoom In</span>
-                </button>
-              </div>
-              </div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-zoom-in"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                </div>
               <input
                 type="number"
                 id="pageNumber"
@@ -871,6 +884,7 @@ function PDFComponent({ tree, fileData, externalResources }: QuartzComponentProp
           </div>
           <div id="loadingBar">
             <div className="progress">
+              <p>Reload the page</p>
               <div className="glimmer"></div>
             </div>
           </div>

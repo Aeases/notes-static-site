@@ -2,15 +2,162 @@
 #viewerContainer {
     width: 100%;
     height: calc(100vh - 32px) !important;
-
     opacity: 1;
     transition: opacity 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
 
+.pdf-toolbar-left {
+  display: flex;
+  gap: $size-4-1;
+  align-items: center;
+}
+
+
+
+
+.pdf-findbar {
+  position: relative;
+  height: 32px;
+    top: 32px;
+  position: absolute;
+  //width: 200px;
+  z-index: 30000;
+  height: auto;
+  padding: 1em !important;
+  font: message-box;
+  cursor: default;
+  background-color: $model-primary;
+  border-radius: $radius-m !important;
+  border: 1px solid $background-modifier-border;
+  box-shadow: $shadow-l !important;
+  -webkit-app-region: no-drag !important;
+  color: var(--dark) !important;
+  padding: $size-4-1 $size-4-2;
+  font-family: "Inter" !important;
+  display: flex;
+  flex-direction: column;
+
+  & > .setting-item {
+    padding: $size-4-1 0;
+    border: none;
+    font-size: $font-ui-small
+  }
+  .setting-item > *:first-child {
+    margin-right: $size-4-4;
+  }
+
+  .setting-item > *:last-child {
+    margin-right: 0;
+  }
+}
+
+.pdf-search-container {
+
+    & > input {
+    -webkit-app-region: no-drag !important;
+    background: var(--highlight) !important;
+    color: var(--alt-text-hover-border-color) !important;
+    padding: 4px 8px !important;
+    font-family: inherit !important;
+    font-size: 13px !important;
+    border-radius: $input-radius !important;
+    outline: none !important;
+    color: var(--dark) !important;
+    display: flex;
+    flex-direction: column;
+    
+    
+    
+    &#pageNumber {
+      border: 1px solid var(--lightgray) !important;
+      width: 1em;
+  }
+  }
+  &:focus {
+    border-color: var(--secondary) !important;
+    transition: box-shadow 0.15s ease-in-out, border 0.15s ease-in-out !important;
+    box-shadow: 0 0 0 2px var(--tertiary);
+  }
+}
+
+
+.search-input {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  
+
+  &::before {
+    top: calc($input-height - $search-icon-size * 1.5 );
+    left: 8px;
+    position: absolute;
+    content: '';
+    height: $search-icon-size;
+    width: $search-icon-size;
+    color: var(--dark);
+    display: block;
+    background-color: var(--dark);
+    -webkit-mask-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='11' cy='11' r='8'></circle><line x1='21' y1='21' x2='16.65' y2='16.65'></line></svg>");
+    -webkit-mask-repeat: no-repeat;
+  }
+
+  & input {
+    padding-right: 56px;
+    padding-left: 36px;
+    display: block;
+    width: 100%;
+    //min-width: 300px;
+    border-radius: $input-radius;
+    height: $input-height;
+    border: $input-border-width solid $background-modifier-border;
+  }
+
+  & input:focus {
+    box-shadow: 0 0 0 3px $background-modifier-border-focus;
+    border-color: $background-modifier-border-focus;
+  }
+
+  & input[data-status="pending"] {
+    box-shadow: 0 0 0 0px var(--secondary);
+    --border-size: 2.2px;
+    --border-angle: 0turn;
+    background-image: conic-gradient(
+        from var(--border-angle),
+        var(--light),
+        var(--light) 50%,
+        var(--light)
+      ),
+      conic-gradient(from var(--border-angle), transparent 50%, var(--highlight), var(--tertiary));
+    background-size: calc(100% - (var(--border-size) * 2))
+        calc(100% - (var(--border-size) * 2)),
+      cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+  
+    animation: bg-spin 3s linear infinite;
+    @keyframes bg-spin {
+      to {
+        --border-angle: 6turn;
+      }
+    }
+    
+    //background-position: calc(50% + 48% * var(--dir-factor));
+  }
+  & input[data-status="notFound"] {
+    box-shadow: 0 0 0 2px $color-red;
+    border-color: $color-red;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
 #viewer,.toolbar {
-border-left: 2px solid var(--gray);
+//border-left: 2px solid var(--gray);
 border-bottom-left-radius: 0;
 border-top-left-radius: 0;
 }
@@ -46,7 +193,7 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   --button-hover-color: var(--highlight) !important;
   --toggled-btn-bg-color: var(--secondary) !important;
   --dropdown-btn-bg-color: var(--light) !important;
-  box-shadow: none !important;
+  box-shadow: 0 0 2px 0px var(--gray) !important;
 /*   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -69,6 +216,9 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   opacity: 0.8;
   backdrop-filter: blur(155px) saturate(90%) contrast(70%) brightness(80%) !important;
 }
+
+
+
 
 .toolbarButton, .dropdownToolbarButton, .secondaryToolbarButton, .dialogButton, #scaleSelect, #zoomIn {
   border-radius: 5px !important;
@@ -94,28 +244,7 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   border: transparent !important;
 }
 
-.toolbarField {
-  -webkit-app-region: no-drag !important;
-    background: var(--highlight) !important;
-    color: var(--alt-text-hover-border-color) !important;
-    font-family: inherit !important;
-    padding: 4px 8px !important;
-    font-size: 13px !important;
-    border-radius: 5px !important;
-    outline: none !important;
-    color: var(--dark) !important;
-    &#pageNumber {
-      border: 1px solid var(--lightgray) !important;
-      width: 1em;
-    }
 
-    &:focus {
-      border-color: var(--secondary) !important;
-      transition: box-shadow 0.15s ease-in-out, border 0.15s ease-in-out !important;
-      box-shadow: 0 0 0 2px var(--tertiary);
-
-    }
-}
 
 .splitToolbarButton {
   margin: 0 !important; 
@@ -2209,7 +2338,8 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   --dialog-button-bg-color: rgba(12, 12, 13, 0.1);
   --dialog-button-hover-bg-color: rgba(12, 12, 13, 0.3);
 
-  --loading-icon: url(/static/images/loading.svg);
+  // all those icons
+/*   --loading-icon: url(/static/images/loading.svg);
   --treeitem-expanded-icon: url(/static/images/treeitem-expanded.svg);
   --treeitem-collapsed-icon: url(/static/images/treeitem-collapsed.svg);
   --toolbarButton-editorFreeText-icon: url(/static/images/toolbarButton-editorFreeText.svg);
@@ -2220,8 +2350,8 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   --toolbarButton-secondaryToolbarToggle-icon: url(/static/images/toolbarButton-secondaryToolbarToggle.svg);
   --toolbarButton-pageUp-icon: url(/static/images/toolbarButton-pageUp.svg);
   --toolbarButton-pageDown-icon: url(/static/images/toolbarButton-pageDown.svg);
-  --toolbarButton-zoomOut-icon: url(/static/images/toolbarButton-zoomOut.svg);
-  --toolbarButton-zoomIn-icon: url(/static/images/toolbarButton-zoomIn.svg);
+  //--toolbarButton-zoomOut-icon: url(/static/images/toolbarButton-zoomOut.svg);
+  //--toolbarButton-zoomIn-icon: url(/static/images/toolbarButton-zoomIn.svg);
   --toolbarButton-presentationMode-icon: url(/static/images/toolbarButton-presentationMode.svg);
   --toolbarButton-print-icon: url(/static/images/toolbarButton-print.svg);
   --toolbarButton-openFile-icon: url(/static/images/toolbarButton-openFile.svg);
@@ -2249,7 +2379,7 @@ button#openFile,#print,#download,#text,#editorFreeText,#editorInk,#editorStamp,#
   --secondaryToolbarButton-spreadOdd-icon: url(/static/images/secondaryToolbarButton-spreadOdd.svg);
   --secondaryToolbarButton-spreadEven-icon: url(/static/images/secondaryToolbarButton-spreadEven.svg);
   --secondaryToolbarButton-documentProperties-icon: url(/static/images/secondaryToolbarButton-documentProperties.svg);
-  --editorParams-stampAddImage-icon: url(/static/images/toolbarButton-zoomIn.svg);
+  --editorParams-stampAddImage-icon: url(/static/images/toolbarButton-zoomIn.svg); */
 }
 
 [dir="rtl"]:root {
@@ -2645,7 +2775,7 @@ body {
   color: var(--toggled-btn-color);
 }
 
-#findInput {
+/* #findInput {
   width: 200px;
 }
 #findInput::-moz-placeholder {
@@ -2661,7 +2791,7 @@ body {
 }
 #findInput[data-status="notFound"] {
   background-color: rgba(255, 102, 102, 1);
-}
+} */
 
 .secondaryToolbar,
 .editorParamsToolbar {
@@ -3057,7 +3187,7 @@ body {
           mask-image: var(--toolbarButton-pageDown-icon);
 }
 
-#zoomOut::before {
+/* #zoomOut::before {
   -webkit-mask-image: var(--toolbarButton-zoomOut-icon);
           mask-image: var(--toolbarButton-zoomOut-icon);
 }
@@ -3065,7 +3195,7 @@ body {
 #zoomIn::before {
   -webkit-mask-image: var(--toolbarButton-zoomIn-icon);
           mask-image: var(--toolbarButton-zoomIn-icon);
-}
+} */
 
 #presentationMode::before {
   -webkit-mask-image: var(--toolbarButton-presentationMode-icon);
