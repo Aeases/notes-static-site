@@ -1,8 +1,10 @@
 ---
-aliases: Structural Features
+aliases:
+  - Structural Features
+  - Structural Choices
 ---
 
-{Structural Choices}
+
 
 Structural features are the organisational elements of a text.
 They help structure a text in how it will work
@@ -13,5 +15,6 @@ Or A Film may use an Opening Sequence, Title Screen, and [[Narrative Features]] 
 
 #### Examples
 - Flashback
-- Feature Article
-- #review Get Different types of structures from the powerpoint from miss
+- [[Rebuttal]]
+- [[Dichotomy]]
+- [[Omission & Marginalisations]]

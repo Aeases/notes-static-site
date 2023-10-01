@@ -1,5 +1,7 @@
-The Context of a text is usually things like
-
+---
+banner_icon: 🧔
+---
+The Context of a writer / character is usually things like
 * Time Of Creation
 * Places or Culture
 * Author's Personal Experiences

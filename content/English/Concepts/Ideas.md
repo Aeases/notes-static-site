@@ -1,15 +1,15 @@
+---
+banner_icon: 💭
+---
 
 
 >[!cite] Ideas
->The specific messages, thoughts, notions, opinions, views, beliefs or understandings, in the text, or considered by the reader in response to it.
+>The specific messages, thoughts, notions, opinions, views, [[Beliefs]] or understandings, in the text, or considered by the reader in response to it.
 >
->*Ideas* are not **single words** e.g. Racism, Ideas must be something more, like how "Racism is systemic in rural towns"
+>>[!warning]
+>>*Ideas* are not **single words** e.g. Racism, Ideas must be **full sentences**, like the idea of how "Racism is systemic in rural towns"
 
->[!tldr] Usage
->The text conveys the idea that {Full Statement}
 
->[!warning]
->Remember that **ideas are not single words they are whole sentences**
 
 
 #### Example

@@ -1,9 +1,9 @@
 ---
 aliases: Approaches to Comparative Writing
 edited_seconds: 20
-updated_at: 2023-09-23T22:14:12.185+08:00
+updated_at: 2023-09-28T20:54:03.195+08:00
 ---
-Comparative Essays compare two or more differetn texts, utilising their [[Textual Features]], [[Perspective]]s or their [[Representation]] of people / ideas
+FcComparative Essays compare two or more differetn texts, utilising their [[Textual Features]], [[Perspective]]s or their [[Representation]] of people / ideas
 
 >[!cite] Comparative Essay Structure
 >Comparative essays follow normal [[Essay Structure#Introduction|introduction]] / [[Essay Structure#Conclusion|conclusion]] structures, however their paragraphs can be structured according to the *Block*, *Alternating*, and *Integrated* approaches.

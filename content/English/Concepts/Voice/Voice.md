@@ -1,9 +1,10 @@
 ---
 edited_seconds: 210
 updated_at: 2023-09-23T23:13:39.280+08:00
+banner_icon: 🔊
 ---
 >[!cite]
->Voice is the personality of a character or the author.
+>Voice is the personality of a character or the author, 
 
 ### How to describe Voice
 - [[Diction]] 
@@ -12,6 +13,17 @@ updated_at: 2023-09-23T23:13:39.280+08:00
 	- *reliability*, their *subjectivity*, **are they biased?**
 - Emotional or Physical "***Distance***"
 	- Close?  Distant / Detached?
+
+### How Voice is ***constructed***
+- [[Diction]]
+- [[Intonation]] (fluctuations in [[Tone]] reflecting emotion / emphasis)
+- [[Idiolect]]
+- [[Rhythm]]
+	- [[Pacing]] / "**flow**"
+Explicitly in writing
+- [[Language Features]]
+	- [[Syntax (English)|Syntax]]
+	- [[Punctuation]] (influences pacing)
 
 
 

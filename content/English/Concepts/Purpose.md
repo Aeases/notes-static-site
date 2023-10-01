@@ -1,9 +1,11 @@
 >[!cite] Purpose
-“Purpose” is the intention or aim of the writer in producing the text. 
-
-The syllabus loosely groups together texts based on their purpose: 
+“Purpose” is the *intention* or *aim* of the ***writer***. 
 
 
+
+
+
+# Extensive 
 ### Purpose based on Text Type
 **[[Imaginative Texts]]**: Texts whose primary purpose is to entertain or provoke thought through their imaginative use of literary elements. This includes narratives and films. 
 
