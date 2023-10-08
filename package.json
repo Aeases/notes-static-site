@@ -4,19 +4,15 @@
   "private": true,
   "version": "4.1.0",
   "type": "module",
-  "author": "jackyzha0 <j.zhao2k19@gmail.com>",
+  "author": "aeases",
   "license": "MIT",
-  "homepage": "https://quartz.jzhao.xyz",
+  "homepage": "https://notes.zanefitzgerald.me",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jackyzha0/quartz.git"
+    "url": "https://github.com/aeases/notes-static-site.git"
   },
   "scripts": {
-    "docs": "npx quartz build --serve -d docs",
-    "check": "tsc --noEmit && npx prettier . --check",
-    "format": "npx prettier . --write",
-    "test": "tsx ./quartz/util/path.test.ts",
-    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1"
+    "build": "pnpx quartz build --serve"
   },
   "engines": {
     "node": ">=18.14"

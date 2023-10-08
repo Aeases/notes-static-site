@@ -1,0 +1,17 @@
+{
+  "packages": [
+    "nodejs-18_x@latest",
+    "nodePackages.pnpm@latest"
+  ],
+  "shell": {
+    "init_hook": [
+      "echo 'Welcome to devbox!' > /dev/null",
+      "pnpm install"
+    ],
+    "scripts": {
+      "test": [
+        "echo \"Error: no test specified\" && exit 1"
+      ]
+    }
+  }
+}
