@@ -23,6 +23,7 @@ import ExcalidrawComponent from "./Excalidraw"
 import FlipDownTimer from "./FlipDownTimer"
 import GoldStraw from "./GoldStraw"
 import PDFComponent from "./PDFComponent"
+import Breadcrumbs from "./Breadcrumbs"
 
 export {
   ArticleTitle,
@@ -45,6 +46,7 @@ export {
   MobileOnly,
   RecentNotes,
   NotFound,
+  Breadcrumbs,
   Avatar,
   FlipDownTimer,
   ExcalidrawComponent,
